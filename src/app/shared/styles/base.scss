@@ -1,0 +1,5 @@
+body {
+    font-family: 'Inter', sans-serif;
+    color: map-get($theme-light, text-primary);
+    background-color: map-get($theme-light, background-primary);
+  }

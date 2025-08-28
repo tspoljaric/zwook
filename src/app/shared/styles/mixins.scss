@@ -1,0 +1,8 @@
+@mixin text-style($size-name, $weight-name) {
+  $size: map-get($text-sizes, $size-name);
+  $weight: map-get($text-weights, $weight-name);
+  font-family: 'Inter', sans-serif;
+  font-size: map-get($size, font-size);
+  line-height: map-get($size, line-height);
+  font-weight: $weight;
+}

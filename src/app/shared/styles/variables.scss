@@ -1,0 +1,155 @@
+// COLORS
+
+$theme-light: (
+  // Text
+  text-primary: #0D121C,
+  text-secondary: #4B5565,
+  text-brand: #2970FF,
+  text-invert: #F8FAFC,
+  text-warning: #EFCC44,
+  text-error: #F04438,
+  text-success: #17B26A,
+  text-primary-placeholder: #697586,
+  text-neutral: #FCFCFD,
+  text-dark: #0D121C,
+
+  // Surface
+  surface-primary: #FCFCFD,
+  surface-invert: #252A33,
+  surface-brand: #2970FF,
+  surface-error: #F04438,
+  surface-warning: #EFCC44,
+  surface-success: #17B26A,
+  surface-secondary: #EEF2F6,
+  surface-primary-active: #E3E8EF,
+  surface-brand-hover: #155EEF,
+  surface-brand-focused: #0040C1,
+  surface-error-hover: #D92D20,
+  surface-error-focused: #912018,
+  surface-success-hover: #079455,
+  surface-success-focused: #085D3A,
+  surface-brand-active: #EFF4FF,
+  surface-error-active: #FEE4E2,
+  surface-success-active: #DCFAE6,
+  surface-neutral: #FCFCFD,
+  surface-warning-light: #FEEFC6,
+
+  // Border
+  border-primary: #CDD5DF,
+  border-brand: #2970FF,
+  border-error: #F04438,
+  border-primary-light: #E3E8EF,
+  border-primary-lighter: #EEF2F6,
+
+  // Background
+  background-primary: #EEF2F6,
+  background-secondary: #FCFCFD,
+);
+
+$theme-dark: (
+  // Text
+  text-primary: #EEF2F6,
+  text-secondary: #CDD5DF,
+  text-brand: #528BFF,
+  text-invert: #121926,
+  text-warning: #EFCC44,
+  text-error: #F04438,
+  text-success: #17B26A,
+  text-primary-placeholder: #9AA3B2,
+  text-neutral: #FCFCFD,
+  text-dark: #0D121C,
+
+  // Surface
+  surface-primary: #252A33,
+  surface-invert: #FCFCFD,
+  surface-brand: #155EEF,
+  surface-error: #F04438,
+  surface-warning: #EFCC44,
+  surface-success: #17B26A,
+  surface-secondary: #202939,
+  surface-primary-active: #3D4149,
+  surface-brand-hover: #155EEF,
+  surface-brand-focused: #0040C1,
+  surface-error-hover: #D92D20,
+  surface-error-focused: #912018,
+  surface-success-hover: #079455,
+  surface-success-focused: #085D3A,
+  surface-brand-active: #002266,
+  surface-error-active: #7A271A,
+  surface-success-active: #074D31,
+  surface-neutral: #FCFCFD,
+  surface-warning-light: #FEEFC6,
+
+  // Border
+  border-primary: #4A4D55,
+  border-brand: #2970FF,
+  border-error: #F04438,
+  border-primary-light: #4B5565,
+  border-primary-lighter: #364152,
+
+  // Background
+  bg-primary: #0D121C,
+  bg-secondary: #252A33,
+);
+
+// TYPOGRAPHY
+
+$font-primary: 'Inter', sans-serif;
+
+$text-sizes: (
+    display-2xl: (
+        font-size: 72px,
+        line-height: 90px
+    ),
+    display-xl: (
+        font-size: 60px,
+        line-height: 72px,
+    ), 
+    display-lg: (
+        font-size: 48px,
+        line-height: 60px
+    ), 
+    display-md: (
+        font-size: 36px,
+        line-height: 44px
+    ), 
+    display-sm: (
+        font-size: 30px,
+        line-height: 40px
+    ),
+    display-xs: (
+        font-size: 24px,
+        line-height: 36px
+    ),
+    text-xl: (
+        font-size: 20px,
+        line-height: 32px
+    ),
+    text-l: (
+        font-size: 18px,
+        line-height: 28px
+    ), 
+    text-lg: (
+        font-size: 16px,
+        line-height: 24px
+    ), 
+    text-md: (
+        font-size: 14px,
+        line-height: 20px
+    ), 
+    text-sm: (
+        font-size: 12px,
+        line-height: 16px
+    ), 
+    text-xs: (
+        font-size: 10px,
+        line-height: 12px
+    ),
+);
+
+$text-weights: (
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700
+);
