@@ -1,5 +1,39 @@
 body {
-    font-family: 'Inter', sans-serif;
-    color: map-get($theme-light, text-primary);
-    background-color: map-get($theme-light, background-primary);
-  }
+  font-family: 'Inter', sans-serif;
+  color: map-get($theme-light, text-primary);
+  background-color: map-get($theme-light, background-primary);
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+.primary-default-filled-btn {
+  padding: $spacing-12 $spacing-20;
+  border-radius: $radius-12;
+  background-color: map-get($theme-light, surface-warning);
+  border: none;
+  color: map-get($theme-light, text-dark);
+  @include text-style(text-md, regular);
+}
+
+.primary-default-filled-btn:hover {
+  padding: $spacing-12 $spacing-20;
+  border-radius: $radius-12;
+  background-color: map-get($theme-light, surface-warning-light);
+  border: none;
+  color: map-get($theme-light, text-dark);
+  @include text-style(text-md, regular);
+}
+
+.primary-default-empty-btn {
+  padding: $spacing-12 $spacing-20;
+  border-radius: $radius-12;
+  border: 1px solid map-get($theme-light, border-primary);
+  background-color: map-get($theme-light, bg-secondary);
+  color: map-get($theme-light, text-dark);
+  @include flex-center(center, center);
+  gap: $spacing-8;
+  @include text-style(text-md, regular);
+}

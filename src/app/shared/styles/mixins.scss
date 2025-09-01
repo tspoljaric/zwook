@@ -6,3 +6,10 @@
   line-height: map-get($size, line-height);
   font-weight: $weight;
 }
+
+@mixin flex-center($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

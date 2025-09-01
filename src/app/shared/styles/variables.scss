@@ -42,8 +42,8 @@ $theme-light: (
   border-primary-lighter: #EEF2F6,
 
   // Background
-  background-primary: #EEF2F6,
-  background-secondary: #FCFCFD,
+  bg-primary: #EEF2F6,
+  bg-secondary: #FCFCFD,
 );
 
 $theme-dark: (
@@ -153,3 +153,20 @@ $text-weights: (
   semibold: 600,
   bold: 700
 );
+
+// SPACING
+
+$spacing-4: 4px;
+$spacing-8: 8px;
+$spacing-10: 10px;
+$spacing-12: 12px;
+$spacing-20: 20px;
+$spacing-24: 24px;
+
+// BORDER RADIUS
+
+$radius-8: 8px;
+$radius-12: 12px;
+
+$radius-20: 20px;
+
