@@ -44,54 +44,54 @@ main {
       }
     }
   }
-}
 
-.input-group {
-  @include flex-center(center, center);
-  border: 1px solid map-get($theme-light, border-primary);
-  gap: $spacing-4;
-  border-radius: $radius-12;
-  padding: 10px 12px;
-  @include text-style(text-md, regular);
-  color: map-get($theme-light, text-primary-placeholder);
-  margin-bottom: $spacing-20;
-
-  &::placeholder {
-    color: map-get($theme-light, text-primary-placeholder);
-  }
-
-  .input-icon {
-    height: 16px;
-  }
-
-  input {
-    flex: 1;
+  .input-group {
+    @include flex-center(center, center);
+    border: 1px solid map-get($theme-light, border-primary);
+    gap: $spacing-4;
+    border-radius: $radius-12;
+    padding: 10px 12px;
     @include text-style(text-md, regular);
-    border: none;
-    outline: none;
-  }
-}
-
-button {
-  width: 100%;
-  cursor: pointer;
-  margin-bottom: $spacing-20;
-}
-
-.divider {
-  @include flex-center(center, center);
-  gap: $spacing-20;
-  margin-bottom: $spacing-20;
-
-  .small-text {
     color: map-get($theme-light, text-primary-placeholder);
-    padding: 0 0.75rem;
+    margin-bottom: $spacing-20;
+
+    &::placeholder {
+      color: map-get($theme-light, text-primary-placeholder);
+    }
+
+    .input-icon {
+      height: 16px;
+    }
+
+    input {
+      flex: 1;
+      @include text-style(text-md, regular);
+      border: none;
+      outline: none;
+    }
   }
 
-  hr {
-    flex: 1;
-    border: none;
-    border-top: 1px solid map-get($theme-light, border-primary);
+  button {
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: $spacing-20;
+  }
+
+  .divider {
+    @include flex-center(center, center);
+    gap: $spacing-20;
+    margin-bottom: $spacing-20;
+
+    .small-text {
+      color: map-get($theme-light, text-primary-placeholder);
+      padding: 0 0.75rem;
+    }
+
+    hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid map-get($theme-light, border-primary);
+    }
   }
 }
 
@@ -153,6 +153,7 @@ button {
   .login-container {
     width: 80% !important;
     max-width: none;
+
     form {
       width: 100%;
     }

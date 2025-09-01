@@ -9,6 +9,11 @@ p {
   margin: 0px;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .primary-default-filled-btn {
   padding: $spacing-12 $spacing-20;
   border-radius: $radius-12;
