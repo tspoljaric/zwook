@@ -13,3 +13,8 @@
   align-items: $align;
   flex-direction: $direction;
 }
+
+@mixin flex-direction($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}

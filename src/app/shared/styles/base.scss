@@ -14,6 +14,14 @@ a {
   text-decoration: none;
 }
 
+.input-icon {
+  height: 16px; 
+}
+
+h3 {
+  @include text-style(text-lg, medium);
+}
+
 .primary-default-filled-btn {
   padding: $spacing-12 $spacing-20;
   border-radius: $radius-12;
@@ -41,4 +49,21 @@ a {
   @include flex-center(center, center);
   gap: $spacing-8;
   @include text-style(text-md, regular);
+}
+
+.btn-small {
+  background-color: map-get($theme-light, surface-warning);
+  padding: $spacing-4 $spacing-8;
+  border-radius: $radius-20;
+  @include text-style(text-xs, regular);
+  color: map-get($theme-light, text-dark);
+  white-space: nowrap;
+}
+
+.small-empty-btn {
+  border: none;
+  padding: $spacing-8 0;
+  @include text-style(text-md, regular);
+  color: map-get($theme-light, text-primary);
+  background-color: inherit;
 }

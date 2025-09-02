@@ -59,10 +59,6 @@ main {
       color: map-get($theme-light, text-primary-placeholder);
     }
 
-    .input-icon {
-      height: 16px;
-    }
-
     input {
       flex: 1;
       @include text-style(text-md, regular);
