@@ -59,12 +59,7 @@ main {
       color: map-get($theme-light, text-primary-placeholder);
     }
 
-    input {
-      flex: 1;
-      @include text-style(text-md, regular);
-      border: none;
-      outline: none;
-    }
+   
   }
 
   button {

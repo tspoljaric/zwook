@@ -1,0 +1,86 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/mixins.scss';
+@import '../../shared/styles/base.scss';
+
+nav {
+  @include flex-center(space-between, center);
+  padding: $spacing-12 $spacing-24;
+  gap: $spacing-20;
+
+  .nav-left {
+    width: 25%;
+    .nav-search {
+      @include flex-center(center, center);
+      gap: $spacing-8;
+      background-color: map-get($theme-light, surface-primary);
+      border: 1px solid map-get($theme-light, border-primary);
+      border-radius: $radius-12;
+      padding: $spacing-12;
+
+      button {
+        background: transparent;
+        border: none;
+        @include flex-center(center, center);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .nav-right {
+    @include flex-center(center, center);
+    gap: $spacing-20;
+
+    .nav-icon {
+      padding: $spacing-8;
+      color: map-get($theme-light, text-primary);
+      &:hover {
+      background-color: map-get($theme-light, surface-primary-active);
+      padding: $spacing-8;
+      border-radius: 50%;
+      }
+    }  
+
+    .avatar {
+      @include flex-center(center, center);
+      gap: $spacing-12;
+
+      .avatar-image {
+        position: relative;
+
+        .avatar-img {
+          width: 40px;
+          height: 40px;
+          position: relative;
+          display: block;
+        }
+        .avatar_indicator {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 12px;
+          height: 12px;
+          border-radius: $radius-20;
+          background-color: map-get($theme-light, text-success);
+          border: 2px solid map-get($theme-light, bg-primary);
+        }
+      }
+
+      .avatar-text {
+        @include flex-center(start, start, column);
+
+        .avatar-name {
+          @include text-style(text-md, semibold);
+          color: map-get($theme-light, text-primary);
+        }
+
+        .avatar-email {
+          @include text-style(text-sm, medium);
+          color: map-get($theme-light, text-primary-placeholder);
+        }
+      }
+    }
+  }
+
+ 
+
+}

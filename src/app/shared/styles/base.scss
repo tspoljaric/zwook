@@ -1,7 +1,7 @@
 body {
   font-family: 'Inter', sans-serif;
   color: map-get($theme-light, text-primary);
-  background-color: map-get($theme-light, background-primary);
+  background-color: map-get($theme-light, bg-primary);
   margin: 0px;
 }
 
@@ -12,6 +12,24 @@ p {
 a {
   cursor: pointer;
   text-decoration: none;
+}
+
+app-sidebar {
+  width: 20%;
+}
+
+app-navbar {
+  width: 80%;
+}
+
+input {
+  flex: 1;
+  @include text-style(text-md, regular);
+  border: none;
+  outline: none;
+  background-color: map-get($theme-light, bg-secondary);
+  color: map-get($theme-light, text-primary-placeholder);
+
 }
 
 .input-icon {
