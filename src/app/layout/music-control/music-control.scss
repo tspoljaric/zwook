@@ -1,0 +1,97 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/mixins.scss';
+@import '../../shared/styles/base.scss';
+
+main {
+  background-color: map-get($theme-light, surface-primary);
+  padding: $spacing-12 $spacing-36;
+  border-top: 1px solid map-get($theme-light, border-primary);
+  box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.05);
+  @include flex-center(space-between, center);
+
+  .artist-wrap {
+    @include flex-center(start, center);
+    padding: $spacing-8;
+    gap: $spacing-8;
+
+    .song-img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .artist {
+      @include flex-center(center, start, column);
+      gap: $spacing-4;
+
+      .artist-song {
+        @include text-style(text-md, regular);
+      }
+
+      .artist-name {
+        @include text-style(text-xs, medium);
+        color: map-get($theme-light, text-primary-placeholder);
+      }
+    }
+  }
+
+  .player-controls {
+    @include flex-center(center, center, column);
+    gap: $spacing-20;
+    width: 40%;
+
+    .controls {
+      @include flex-center(center, center);
+      gap: $spacing-36;
+    }
+
+    .loader {
+      @include flex-center(center, center);
+      gap: $spacing-12;
+      width: 100%;
+
+      .time {
+        @include text-style(text-xs, regular);
+        color: map-get($theme-light, text-primary-placeholder);
+      }
+
+      .progress-bar {
+        background-color: map-get($theme-light, border-primary-lighter);
+        border-radius: $radius-20;
+        height: 4px;
+        width: 100%;
+        overflow: hidden;
+
+        .progress-fill {
+          background-color: map-get($theme-light, text-primary);
+          width: 25%;
+          height: 100%;
+          border-radius: inherit;
+          transition: width 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .volume {
+    @include flex-center(center, center);
+    gap: $spacing-12;
+    width: 100%;
+    max-width: 200px;
+
+    .progress-bar {
+        background-color: map-get($theme-light, border-primary-lighter);
+        border-radius: $radius-20;
+        height: 4px;
+        width: 100%;
+        overflow: hidden;
+
+        .progress-fill {
+          background-color: map-get($theme-light, text-primary);
+          width: 85%;
+          height: 100%;
+          border-radius: inherit;
+          transition: width 0.3s ease;
+        }
+      }
+  }
+}

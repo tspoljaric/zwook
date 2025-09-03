@@ -3,6 +3,24 @@
 @import '../../shared/styles/base.scss';
 
 main {
-    display: flex;
+  display: flex;
+  .right-column {
     flex-grow: 1;
+    @include flex-direction(column);
+    app-navbar {
+      flex: 0 0 auto;
+    }
+  
+    .content {
+      flex: 1;
+    }
+  
+    app-music-control {
+      flex: 0 0 auto;
+      position: sticky;
+      bottom: 0;
+      z-index: 10;
+    }
+  }
 }
+
