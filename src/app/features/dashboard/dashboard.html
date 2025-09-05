@@ -1,10 +1,85 @@
-<main>
-  <app-sidebar></app-sidebar>
+<main class="layout">
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
   <div class="right-column">
     <app-navbar></app-navbar>
 
     <div class="content">
-      
+      <div class="featured-container">
+        <div class="card" *ngFor="let item of featured">
+          <img [src]="item.image" alt="Abstract image" class="card-img" />
+
+          <div class="card-overlay">
+            <span class="card-icon">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.14282 31.8569L31.8571 2.14258M31.8571 2.14258H20.4285M31.8571 2.14258V13.5711"
+                  stroke="#FCFCFD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-subtitle">{{ item.subtitle }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="podcasts">
+        <div class="podcasts-title">
+          <h2>Podcasts</h2>
+          <a routerLink="/podcasts" class="btn-xs-empty">View All</a>
+        </div>
+
+        <div class="podcast-cards">
+          <div class="podcast-card" *ngFor="let podcast of podcasts">
+            <img [src]="podcast.image" alt="{{ podcast.title }} Cover" class="podcast-img" />
+            <div class="podcast-overlay">
+
+              <div class="podcast-status" [ngClass]="podcast.status">
+                <span class="status-indicator"></span>
+                <p>{{ podcast.status | titlecase }}</p>
+              </div>
+
+              <div class="podcast-label">
+                <p class="podcast-title">{{ podcast.title }}</p>
+                <div class="premium-label">
+                  <p>Premium</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-section">
+        <div class="featured-title">
+          <h2>Featured</h2>
+          <div class="filters">
+            <a routerLink="/featured" class="btn-xs-empty">All</a>
+            <a routerLink="/podcasts" class="btn-xs-empty">Premium</a>
+            <a routerLink="/podcasts" class="btn-xs-empty">Disabled</a>
+          </div>
+        </div>
+
+        <div class="featured-cards">
+          <div class="featured-card" *ngFor="let feat of featuredArtists">
+            <img [src]="feat.image" alt="Artist" class="artist-img" />
+            <p class="artist-name">{{ feat.artist }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="categories">
+        <div class="categories-title">
+          <h2>Categories</h2>
+          <a routerLink="/categories" class="btn-xs-empty">View All</a>
+        </div>
+        <div class="category-cards">
+          <div class="category-card" *ngFor="let category of categories">
+            <img [src]="category.image" alt="Artist" class="artist-img" />
+            <p class="artist-name">{{ category.artist }}</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <app-music-control></app-music-control>

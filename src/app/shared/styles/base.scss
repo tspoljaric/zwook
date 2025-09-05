@@ -14,11 +14,6 @@ a {
   text-decoration: none;
 }
 
-app-sidebar {
-  width: 20%;
-}
-
-
 input {
   flex: 1;
   @include text-style(text-md, regular);
@@ -33,8 +28,17 @@ input {
   height: 16px; 
 }
 
+h2 {
+  @include text-style(text-xl, semibold);
+}
+
 h3 {
   @include text-style(text-lg, medium);
+}
+
+h4 {
+  @include text-style(display-md, medium);
+  margin: 0px;
 }
 
 .primary-default-filled-btn {
@@ -44,15 +48,15 @@ h3 {
   border: none;
   color: map-get($theme-light, text-dark);
   @include text-style(text-md, regular);
-}
 
-.primary-default-filled-btn:hover {
-  padding: $spacing-12 $spacing-20;
-  border-radius: $radius-12;
-  background-color: map-get($theme-light, surface-warning-light);
-  border: none;
-  color: map-get($theme-light, text-dark);
-  @include text-style(text-md, regular);
+  &:hover {
+    padding: $spacing-12 $spacing-20;
+    border-radius: $radius-12;
+    background-color: map-get($theme-light, surface-warning-light);
+    border: none;
+    color: map-get($theme-light, text-dark);
+    @include text-style(text-md, regular);
+  }
 }
 
 .primary-default-empty-btn {
@@ -66,7 +70,7 @@ h3 {
   @include text-style(text-md, regular);
 }
 
-.btn-small {
+.btn-sm {
   background-color: map-get($theme-light, surface-warning);
   padding: $spacing-4 $spacing-8;
   border-radius: $radius-20;
@@ -75,10 +79,25 @@ h3 {
   white-space: nowrap;
 }
 
-.small-empty-btn {
+.btn-sm-empty {
   border: none;
   padding: $spacing-8 0;
   @include text-style(text-md, regular);
   color: map-get($theme-light, text-primary);
   background-color: inherit;
+}
+
+.btn-xs-empty {
+  padding: $spacing-8 $spacing-12;
+  border: 1px solid map-get($theme-light, border-primary);
+  border-radius: $radius-12;
+  @include text-style(text-md, regular);
+
+  &:hover {
+    background-color: map-get($theme-light, surface-primary-active);
+  }
+  &:active {
+    background-color: map-get($theme-light, surface-invert);
+    color: map-get($theme-light, text-invert);
+  }
 }

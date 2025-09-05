@@ -10,6 +10,7 @@ import { NgIf } from '@angular/common';
 export class Sidebar {
   showCard: boolean = true;
 
+
   dismissCard() {
     this.showCard = false;
   

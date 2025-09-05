@@ -2,109 +2,114 @@
 @import '../../shared/styles/mixins.scss';
 @import '../../shared/styles/base.scss';
 
-main {
-  @include flex-direction(column);
-  background-color: map-get($theme-light, bg-secondary);
-  padding: $spacing-24 $spacing-24 56px $spacing-24;
-  gap: $spacing-24;
-  border-right: 1px solid map-get($theme-light, border-primary-lighter);
-  min-height: 100vh;
+.layout {
+  display: flex;
+  height: 100vh;
 
-  .logo {
-    height: 50%;
-    width: 50%;
-  }
-
-  .nav-list {
+  .sidebar {
     @include flex-direction(column);
-    gap: $spacing-16;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: $spacing-24;
+    background-color: map-get($theme-light, bg-secondary);
+    padding: $spacing-24 $spacing-24 56px $spacing-24;
+    gap: $spacing-24;
+    border-right: 1px solid map-get($theme-light, border-primary-lighter);
+    
 
-    .nav-item {
-      padding: $spacing-8 $spacing-12;
-      border-radius: $radius-12;
+    .logo {
+      display: block;
+      width: 50%;
+    }
 
-      .nav-link {
-        @include flex-center(space-between, start);
+    .nav-list {
+      @include flex-direction(column);
+      gap: $spacing-16;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: $spacing-24;
+
+      .nav-item {
+        padding: $spacing-8 $spacing-12;
+        border-radius: $radius-12;
+
+        .nav-link {
+          @include flex-center(space-between, start);
+        }
       }
 
-    }
+      .nav-item:hover,  .nav-item:active {
+        background-color: map-get($theme-light, surface-primary-active);
+      }
 
-    .nav-item:active {
-      background-color: map-get($theme-light, surface-primary-active);
-    }
+      a {
+        @include flex-center(start, center);
+        gap: $spacing-12;
+        color: map-get($theme-light, text-secondary);
+      }
 
-    a {
-      @include flex-center(start, center);
-      gap: $spacing-12;
-    }
-
-    .device-count {
-      background-color: map-get($theme-light, surface-warning);
-      padding: $spacing-4 $spacing-8;
-      @include text-style(text-xs, medium);
-      color: map-get($theme-light, text-dark);
-      border-radius: $radius-20;
-    }
-  }
-
-  .nav-icon {
-    height: 16px;
-  }
-
-  .upgrade-card {
-    @include flex-center(center, start, column);
-    gap: $spacing-20;
-    border-radius: $radius-12;
-    padding: $spacing-16;
-    background-color: map-get($theme-light, bg-secondary);
-    border: 1px solid map-get($theme-light, border-primary);
-    margin-top: auto;
-
-    .upgrade-header {
-      @include flex-center(center, center);
-      gap: $spacing-12;
-
-      .icon-outline {
-        background-color: map-get($theme-light, surface-warning-light);
-        padding: $spacing-12;
+      .device-count {
+        background-color: map-get($theme-light, surface-warning);
+        padding: $spacing-4 $spacing-8;
+        @include text-style(text-xs, medium);
+        color: map-get($theme-light, text-dark);
         border-radius: $radius-20;
       }
     }
 
-    .info-text {
-      @include text-style(text-md, medium);
-      color: map-get($theme-light, text-primary-placeholder);
-    }
-
-    .progress-bar {
-      background-color: map-get($theme-light, surface-primary-active);
-      border-radius: $radius-20;
+    .nav-icon {
       height: 16px;
-      width: 100%;
-      overflow: hidden;
-
-      .progress-fill {
-        background-color: map-get($theme-light, surface-warning);
-        width: 75%;
-        height: 100%;
-        border-radius: inherit;
-        transition: width 0.3s ease;
-      }
     }
 
-    .actions {
-      @include flex-center(center, center);
-      gap: $spacing-12;
+    .upgrade-card {
+      @include flex-center(center, start, column);
+      gap: $spacing-20;
+      border-radius: $radius-12;
+      padding: $spacing-16;
+      background-color: map-get($theme-light, bg-secondary);
+      border: 1px solid map-get($theme-light, border-primary);
+      margin-top: auto;
 
-      .outline-yellow {
-        color: map-get($theme-light, surface-warning);
+      .upgrade-header {
+        @include flex-center(center, center);
+        gap: $spacing-12;
 
+        .icon-outline {
+          background-color: map-get($theme-light, surface-warning-light);
+          padding: $spacing-12;
+          border-radius: $radius-20;
+        }
       }
-    }
 
+      .info-text {
+        @include text-style(text-md, medium);
+        color: map-get($theme-light, text-primary-placeholder);
+      }
+
+      .progress-bar {
+        background-color: map-get($theme-light, surface-primary-active);
+        border-radius: $radius-20;
+        height: 16px;
+        width: 100%;
+        overflow: hidden;
+
+        .progress-fill {
+          background-color: map-get($theme-light, surface-warning);
+          width: 75%;
+          height: 100%;
+          border-radius: inherit;
+          transition: width 0.3s ease;
+        }
+      }
+
+      .actions {
+        @include flex-center(center, center);
+        gap: $spacing-12;
+
+        .outline-yellow {
+          color: map-get($theme-light, surface-warning);
+
+        }
+      }
+
+    }
   }
 }

@@ -2,19 +2,224 @@
 @import '../../shared/styles/mixins.scss';
 @import '../../shared/styles/base.scss';
 
-main {
+.layout {
   display: flex;
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
   .right-column {
     flex-grow: 1;
     @include flex-direction(column);
+
+
     app-navbar {
       flex: 0 0 auto;
     }
-  
+
     .content {
       flex: 1;
+      padding: $spacing-36;
+
+      .featured-container {
+        @include flex-center(start, center);
+        gap: $spacing-24;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .card {
+          position: relative;
+          overflow: hidden;
+          flex: 1 1 300px;
+
+          .card-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: $radius-8;
+            object-fit: cover;
+          }
+
+          .card-overlay {
+            @include flex-center(center, start, column);
+            gap: $spacing-16;
+            position: absolute;
+            bottom: $spacing-16;
+            left: $spacing-16;
+            color: map-get($theme-light, text-neutral);
+
+            .card-icon {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+
+          .card-subtitle {
+            @include text-style(text-md, semibold);
+          }
+        }
+      }
+
+      .podcasts {
+        @include flex-center(center, start, column);
+        gap: $spacing-20;
+        width: 100%;
+
+        .podcasts-title {
+          @include flex-center(space-between, center);
+          padding: $spacing-4;
+          width: 100%;
+          z-index: 1;
+        }
+
+        .podcast-cards {
+          @include flex-center(center, start, );
+          gap: $spacing-24;
+          flex-wrap: wrap;
+          width: 100%;
+
+          .podcast-card {
+            position: relative;
+            border-radius: $radius-8;
+            overflow: hidden;
+            flex: 1 1 200px;
+            height: 10rem;
+            width: 100%;
+
+            .podcast-img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+
+            }
+
+            .podcast-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              pointer-events: none;
+              @include flex-center(space-between, center, column);
+
+              .podcast-status {
+                pointer-events: auto;
+                align-self: flex-end;
+                margin: $spacing-16;
+                @include flex-center(center, center);
+                gap: $spacing-8;
+                padding: $spacing-4 $spacing-8;
+                background-color: rgba(65, 63, 58, 0.8);
+                border-radius: $radius-20;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+
+                .status-indicator {
+                  background-color: gray;
+                  border-radius: 50%;
+                  width: 12px;
+                  height: 12px;
+                }
+
+                &.online {
+                  color: map-get($theme-light, text-success);
+
+                  .status-indicator {
+                    background-color: map-get($theme-light, text-success);
+                  }
+                }
+
+                &.offline {
+                  color: map-get($theme-light, surface-error);
+
+                  .status-indicator {
+                    background-color: map-get($theme-light, surface-error);
+                  }
+                }
+              }
+
+              .podcast-label {
+                pointer-events: auto;
+                @include flex-center(space-between, center);
+                width: 100%;
+                background-color: rgba(13, 18, 28, 0.6);
+                padding: $spacing-12;
+                border-radius: 0 0 $radius-8 $radius-8;
+                gap: $spacing-12;
+
+                .podcast-title {
+                  color: map-get($theme-light, text-neutral);
+                  @include text-style(text-md, medium);
+                  margin-left: $spacing-12;
+                }
+
+                .premium-label {
+                  padding: $spacing-4 $spacing-8;
+                  background-color: map-get($theme-light, surface-brand);
+                  color: map-get($theme-light, text-neutral);
+                  border-radius: $radius-20;
+                  margin-right: $spacing-12;
+                  @include text-style(text-xs, medium);
+
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+      .feature-section,
+      .categories {
+        @include flex-center(center, start, column);
+        gap: $spacing-20;
+
+        .featured-title,
+        .categories-title {
+          @include flex-center(space-between, center);
+          gap: $spacing-8;
+          width: 100%;
+          z-index: 1;
+
+          .filters {
+            @include flex-center(space-between, center);
+            gap: $spacing-8;
+
+          }
+        }
+
+        .featured-cards,
+        .category-cards {
+          @include flex-center(center, center);
+          gap: $spacing-20;
+
+          .featured-card,
+          .category-card {
+            @include flex-center(center, start, column);
+            background-color: map-get($theme-light, bg-secondary);
+            padding: $spacing-12;
+            gap: $spacing-8;
+            border-radius: $radius-12;
+
+            .artist-img {
+              border-radius: $radius-8;
+              width: 100%;
+              height: auto;
+            }
+
+            .artist-name {
+              @include text-style(text-md, medium);
+            }
+          }
+        }
+      }
     }
-  
+
     app-music-control {
       flex: 0 0 auto;
       position: sticky;
@@ -23,4 +228,3 @@ main {
     }
   }
 }
-
