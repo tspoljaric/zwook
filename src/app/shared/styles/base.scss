@@ -33,17 +33,21 @@ app-sidebar {
   }
 }
 
-router-outlet {
-  flex-grow: 1;
-  height: 100vh;
-  overflow-y: auto;
-}
+// router-outlet {
+//   flex-grow: 1;
+//   height: 100vh;
+//   overflow-y: auto;
+// }
 
 app-music-control {
   flex: 0 0 auto;
   position: sticky;
   bottom: 0;
   z-index: 10;
+}
+
+app-album-list, app-playlist-list {
+  width: 100vw;
 }
 
 p {
@@ -67,6 +71,12 @@ input {
 
 .input-icon {
   height: 16px;
+}
+ 
+h1 {
+  @include text-style(display-2xl, medium);
+  margin: 0;
+
 }
 
 h2 {
