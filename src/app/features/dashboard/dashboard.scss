@@ -3,26 +3,23 @@
 @import '../../shared/styles/base.scss';
 
 .layout {
-  display: flex;
+  @include flex-direction(column);
+  height: 100vh;
 
-  .sidebar {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-  }
   .right-column {
-    flex-grow: 1;
     @include flex-direction(column);
-
+    flex-grow: 1;
+    height: 100%;
+    overflow-y: hidden;
 
     app-navbar {
       flex: 0 0 auto;
     }
 
     .content {
-      flex: 1;
+      flex: 1 1 auto;
       padding: $spacing-36;
+      overflow-y: auto;
 
       .featured-container {
         @include flex-center(start, center);
@@ -190,6 +187,10 @@
             @include flex-center(space-between, center);
             gap: $spacing-8;
 
+            .active {
+              background-color: map-get($theme-light, surface-invert);
+              color: map-get($theme-light, text-invert);
+            }
           }
         }
 
@@ -220,11 +221,6 @@
       }
     }
 
-    app-music-control {
-      flex: 0 0 auto;
-      position: sticky;
-      bottom: 0;
-      z-index: 10;
-    }
+
   }
 }

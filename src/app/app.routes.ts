@@ -12,8 +12,9 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: Login },
   { path: 'register', component: Register },
-  { path: 'dashboard', component: Dashboard },
+  { path: 'dashboard', component: Dashboard},
   { path: 'albums', component: AlbumList },
   { path: 'playlists', component: PlaylistList },
   { path: 'podcasts/create', component: PodcastForm },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];

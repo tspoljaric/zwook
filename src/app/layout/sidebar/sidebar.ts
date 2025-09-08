@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgIf],
+  standalone: true,
+  imports: [NgIf, RouterModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss'
 })
@@ -13,6 +15,5 @@ export class Sidebar {
 
   dismissCard() {
     this.showCard = false;
-  
   }
 }

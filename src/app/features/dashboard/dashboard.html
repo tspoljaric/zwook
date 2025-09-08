@@ -1,7 +1,4 @@
 <main class="layout">
-  <div class="sidebar">
-    <app-sidebar></app-sidebar>
-  </div>
   <div class="right-column">
     <app-navbar></app-navbar>
 
@@ -54,7 +51,7 @@
         <div class="featured-title">
           <h2>Featured</h2>
           <div class="filters">
-            <a routerLink="/featured" class="btn-xs-empty">All</a>
+            <a routerLink="/featured" class="btn-xs-empty active">All</a>
             <a routerLink="/podcasts" class="btn-xs-empty">Premium</a>
             <a routerLink="/podcasts" class="btn-xs-empty">Disabled</a>
           </div>
@@ -81,8 +78,7 @@
         </div>
       </div>
     </div>
-
-    <app-music-control></app-music-control>
   </div>
+  <app-music-control></app-music-control>
 
 </main>
