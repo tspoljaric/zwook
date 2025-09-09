@@ -50,10 +50,6 @@
           .header-text {
             @include flex-direction(column);
             color: map-get($theme-light, text-neutral);
-
-            .text {
-              @include text-style(text-md, semibold);
-            }
           }
         }
       }
@@ -73,12 +69,7 @@
           } 
           .song-wrap {
             @include flex-center(start, start, column);
-
-            .song {
-              @include text-style(text-md, regular);
-            }
             .artist {
-              @include text-style(text-xs, medium);
               color: map-get($theme-light, text-primary-placeholder);
             }
           }

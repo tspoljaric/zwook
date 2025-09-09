@@ -69,7 +69,6 @@ nav {
         @include flex-center(start, start, column);
 
         .avatar-name {
-          @include text-style(text-md, semibold);
           color: map-get($theme-light, text-primary);
         }
 

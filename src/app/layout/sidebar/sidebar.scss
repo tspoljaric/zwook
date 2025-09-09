@@ -49,7 +49,6 @@
       .device-count {
         background-color: map-get($theme-light, surface-warning);
         padding: $spacing-4 $spacing-8;
-        @include text-style(text-xs, medium);
         color: map-get($theme-light, text-dark);
         border-radius: $radius-20;
       }
@@ -80,7 +79,6 @@
       }
 
       .info-text {
-        @include text-style(text-md, medium);
         color: map-get($theme-light, text-primary-placeholder);
       }
 

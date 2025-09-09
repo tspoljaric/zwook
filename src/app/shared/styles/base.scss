@@ -1,173 +1,190 @@
   body {
-  font-family: 'Inter', sans-serif;
-  color: map-get($theme-light, text-primary);
-  background-color: map-get($theme-light, bg-primary);
-  margin: 0px;
-}
-
-.app-layout {
-  display: flex;
-  height: 100vh;
-
-  &.flex-row {
-    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    color: map-get($theme-light, text-primary);
+    background-color: map-get($theme-light, bg-primary);
+    margin: 0;
   }
 
-  &.flex-column {
-    flex-direction: column;
+  .app-layout {
+    display: flex;
+    height: 100vh;
+
+    &.flex-row {
+      flex-direction: row;
+    }
+
+    &.flex-column {
+      flex-direction: column;
+    }
   }
-}
 
-app-sidebar {
-  width: 280px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  flex-shrink: 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-  }
-}
-
-// router-outlet {
-//   flex-grow: 1;
-//   height: 100vh;
-//   overflow-y: auto;
-// }
-
-app-music-control {
-  flex: 0 0 auto;
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
-}
-
-app-album-list, app-playlist-list, app-podcast-form, app-podcast-form, app-podcast-list {
-  width: 100vw;
-}
-
-p {
-  margin: 0px;
-}
-
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-input {
-  flex: 1;
-  @include text-style(text-md, regular);
-  border: none;
-  outline: none;
-  background-color: map-get($theme-light, bg-secondary);
-  color: map-get($theme-light, text-primary-placeholder);
-
-}
-
-.input-icon {
-  height: 16px;
-}
- 
-h1 {
-  @include text-style(display-2xl, medium);
-  margin: 0;
-
-}
-
-h2 {
-  @include text-style(text-xl, semibold);
-}
-
-h3 {
-  @include text-style(text-lg, medium);
-}
-
-h4 {
-  @include text-style(display-md, medium);
-  margin: 0px;
-}
-
-h5 {
-  @include text-style(display-sm, medium);
-  margin: 0px;
-}
-
-.layout {
-  display: flex;
-
-  .sidebar {
+  app-sidebar {
+    width: 280px;
     position: sticky;
     top: 0;
     height: 100vh;
     overflow-y: auto;
+    flex-shrink: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
   }
-}
 
-.primary-default-filled-btn {
-  width: 100%;
-  padding: $spacing-12 $spacing-20;
-  border-radius: $radius-12;
-  background-color: map-get($theme-light, surface-warning);
-  border: none;
-  color: map-get($theme-light, text-dark);
-  @include text-style(text-md, regular);
+  app-music-control {
+    flex: 0 0 auto;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
 
-  &:hover {
+  app-album-list,
+  app-playlist-list,
+  app-podcast-form,
+  app-podcast-form,
+  app-podcast-list {
+    width: 100vw;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  input {
+    flex: 1;
+    @include text-style(text-md, regular);
+    border: none;
+    outline: none;
+    background-color: map-get($theme-light, bg-secondary);
+    color: map-get($theme-light, text-primary-placeholder);
+
+  }
+
+  form {
+    width: 100%;
+    box-sizing: border-box;
+
+  }
+
+  .input-icon {
+    height: 16px;
+  }
+
+  h1 {
+    @include text-style(display-2xl, medium);
+    margin: 0;
+  }
+
+  h2 {
+    @include text-style(text-xl, semibold);
+    margin: 0;
+  }
+
+  h3 {
+    @include text-style(text-lg, medium);
+    margin: 0;
+  }
+
+  h4 {
+    @include text-style(display-md, medium);
+    margin: 0;
+  }
+
+  h5 {
+    @include text-style(display-sm, medium);
+    margin: 0;
+  }
+
+  .text-xs-medium {
+    @include text-style(text-xs, medium);
+  }
+
+  .text-md-regular {
+    @include text-style(text-md, regular);
+  }
+
+  .text-md-medium {
+    @include text-style(text-md, medium);
+  }
+
+  .text-md-semibold {
+    @include text-style(text-md, semibold);
+  }
+  
+  .layout {
+    display: flex;
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+  }
+
+  .primary-default-filled-btn {
+    width: 100%;
     padding: $spacing-12 $spacing-20;
     border-radius: $radius-12;
-    background-color: map-get($theme-light, surface-warning-light);
+    background-color: map-get($theme-light, surface-warning);
     border: none;
     color: map-get($theme-light, text-dark);
     @include text-style(text-md, regular);
-  }
-}
 
-.primary-default-empty-btn {
-  width: 100%;
-  padding: $spacing-12 $spacing-20;
-  border-radius: $radius-12;
-  border: 1px solid map-get($theme-light, border-primary);
-  background-color: map-get($theme-light, bg-secondary);
-  color: map-get($theme-light, text-dark);
-  @include flex-center(center, center);
-  gap: $spacing-8;
-  @include text-style(text-md, regular);
-}
-
-.btn-sm {
-  background-color: map-get($theme-light, surface-warning);
-  padding: $spacing-4 $spacing-8;
-  border-radius: $radius-20;
-  @include text-style(text-xs, regular);
-  color: map-get($theme-light, text-dark);
-  white-space: nowrap;
-}
-
-.btn-sm-empty {
-  border: none;
-  padding: $spacing-8 0;
-  @include text-style(text-md, regular);
-  color: map-get($theme-light, text-primary);
-  background-color: inherit;
-}
-
-.btn-xs-empty {
-  padding: $spacing-8 $spacing-12;
-  border: 1px solid map-get($theme-light, border-primary);
-  border-radius: $radius-12;
-  @include text-style(text-md, regular);
-
-  &:hover {
-    background-color: map-get($theme-light, surface-primary-active);
+    &:hover {
+      background-color: map-get($theme-light, surface-warning-light);
+    }
   }
 
-  &:active {
-    background-color: map-get($theme-light, surface-invert);
-    color: map-get($theme-light, text-invert);
+  .primary-default-empty-btn {
+    width: 100%;
+    padding: $spacing-12 $spacing-20;
+    border-radius: $radius-12;
+    border: 1px solid map-get($theme-light, border-primary);
+    background-color: map-get($theme-light, bg-secondary);
+    color: map-get($theme-light, text-dark);
+    @include flex-center(center, center);
+    gap: $spacing-8;
+    @include text-style(text-md, regular);
   }
-}
+
+  .btn-sm {
+    background-color: map-get($theme-light, surface-warning);
+    padding: $spacing-4 $spacing-8;
+    border-radius: $radius-20;
+    @include text-style(text-xs, regular);
+    color: map-get($theme-light, text-dark);
+    white-space: nowrap;
+  }
+
+  .btn-sm-empty {
+    border: none;
+    padding: $spacing-8 0;
+    @include text-style(text-md, regular);
+    color: map-get($theme-light, text-primary);
+    background-color: inherit;
+  }
+
+  .btn-xs-empty {
+    padding: $spacing-8 $spacing-12;
+    border: 1px solid map-get($theme-light, border-primary);
+    border-radius: $radius-12;
+    @include text-style(text-md, regular);
+
+    &:hover {
+      background-color: map-get($theme-light, surface-primary-active);
+    }
+
+    &:active {
+      background-color: map-get($theme-light, surface-invert);
+      color: map-get($theme-light, text-invert);
+    }
+  }

@@ -60,10 +60,8 @@
                 box-sizing: border-box;
                 border-radius: $radius-12;
                 padding: $spacing-12;
-                @include text-style(text-md, regular);
                 color: map-get($theme-light, text-primary-placeholder);
                 border: 1px solid map-get($theme-light, border-primary);
-
               }
 
               &::placeholder {
@@ -101,13 +99,10 @@
                 border-radius: $radius-8;
               }
 
-              .text-md {
-                @include text-style(text-md, medium);
 
                 .blue-text {
                   color: map-get($theme-light, text-brand);
                 }
-              }
 
               .text-sm {
                 @include text-style(text-sm, regular);

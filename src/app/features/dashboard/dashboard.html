@@ -15,7 +15,7 @@
               </svg>
             </span>
             <h4 class="card-title">{{ item.title }}</h4>
-            <p class="card-subtitle">{{ item.subtitle }}</p>
+            <p class="text-md-semibold">{{ item.subtitle }}</p>
           </div>
         </div>
       </div>
@@ -37,8 +37,8 @@
               </div>
 
               <div class="podcast-label">
-                <p class="podcast-title">{{ podcast.title }}</p>
-                <div class="premium-label">
+                <p class="podcast-title text-md-medium">{{ podcast.title }}</p>
+                <div class="premium-label text-xs-medium">
                   <p>Premium</p>
                 </div>
               </div>
@@ -60,7 +60,7 @@
         <div class="featured-cards">
           <div class="featured-card" *ngFor="let feat of featuredArtists">
             <img [src]="feat.image" alt="Artist" class="artist-img" />
-            <p class="artist-name">{{ feat.artist }}</p>
+            <p class="text-md-medium">{{ feat.artist }}</p>
           </div>
         </div>
       </div>

@@ -23,12 +23,7 @@ main {
       @include flex-center(center, start, column);
       gap: $spacing-4;
 
-      .artist-song {
-        @include text-style(text-md, regular);
-      }
-
       .artist-name {
-        @include text-style(text-xs, medium);
         color: map-get($theme-light, text-primary-placeholder);
       }
     }

@@ -32,7 +32,6 @@ main {
       .info-signup {
         @include flex-center(center, center);
         gap: $spacing-4;
-        @include text-style(text-md, medium);
 
         .info-signup-text {
           color: map-get($theme-light, text-primary-placeholder);
@@ -47,7 +46,6 @@ main {
     gap: $spacing-4;
     border-radius: $radius-12;
     padding: 10px 12px;
-    @include text-style(text-md, regular);
     color: map-get($theme-light, text-primary-placeholder);
     margin-bottom: $spacing-20;
 
@@ -57,13 +55,6 @@ main {
 
     .input-icon {
       height: 16px;
-    }
-
-    input {
-      flex: 1;
-      @include text-style(text-md, regular);
-      border: none;
-      outline: none;
     }
   }
 

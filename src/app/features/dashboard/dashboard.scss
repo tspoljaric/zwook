@@ -54,10 +54,6 @@
               justify-content: center;
             }
           }
-
-          .card-subtitle {
-            @include text-style(text-md, semibold);
-          }
         }
       }
 
@@ -151,7 +147,6 @@
 
                 .podcast-title {
                   color: map-get($theme-light, text-neutral);
-                  @include text-style(text-md, medium);
                   margin-left: $spacing-12;
                 }
 
@@ -161,8 +156,6 @@
                   color: map-get($theme-light, text-neutral);
                   border-radius: $radius-20;
                   margin-right: $spacing-12;
-                  @include text-style(text-xs, medium);
-
                 }
               }
 
@@ -211,10 +204,6 @@
               border-radius: $radius-8;
               width: 100%;
               height: auto;
-            }
-
-            .artist-name {
-              @include text-style(text-md, medium);
             }
           }
         }
