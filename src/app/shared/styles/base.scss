@@ -34,6 +34,10 @@
     }
   }
 
+  app-navbar {
+    flex: 0 0 auto;
+  }
+
   app-music-control {
     flex: 0 0 auto;
     position: sticky;
@@ -48,6 +52,25 @@
   app-podcast-list {
     width: 100vw;
   }
+
+  .layout {
+    @include flex-direction(column);
+    height: 100vh;
+
+    .right-container {
+      @include flex-direction(column);
+      flex-grow: 1;
+      height: 100%;
+      overflow-y: hidden;
+
+      .content {
+        flex: 1 1 auto;
+        padding: $spacing-36;
+        overflow-y: auto;
+      }
+    }
+  }
+
 
   p {
     margin: 0;
@@ -65,7 +88,6 @@
     outline: none;
     background-color: map-get($theme-light, bg-secondary);
     color: map-get($theme-light, text-primary-placeholder);
-
   }
 
   form {
@@ -103,8 +125,24 @@
     margin: 0;
   }
 
+  .text-xs-regular {
+    @include text-style(text-xs, regular);
+  }
+
   .text-xs-medium {
     @include text-style(text-xs, medium);
+  }
+
+  .text-sm-regular {
+    @include text-style(text-sm, regular);
+  }
+
+  .text-sm-medium {
+    @include text-style(text-sm, medium);
+  }
+
+  .text-sm-semibold {
+    @include text-style(text-sm, semibold);
   }
 
   .text-md-regular {
@@ -118,7 +156,20 @@
   .text-md-semibold {
     @include text-style(text-md, semibold);
   }
-  
+
+  .txt-light-primary-placeholder {
+    color: map-get($theme-light, text-primary-placeholder);
+  }
+
+  .txt-light-neutral {
+    color: map-get($theme-light, text-neutral);
+  }
+
+  .txt-light-secondary {
+    color: map-get($theme-light, text-secondary);
+  }
+
+
   .layout {
     display: flex;
 
@@ -169,7 +220,6 @@
     border: none;
     padding: $spacing-8 0;
     @include text-style(text-md, regular);
-    color: map-get($theme-light, text-primary);
     background-color: inherit;
   }
 

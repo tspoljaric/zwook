@@ -1,6 +1,6 @@
 <main class="layout">
 
-  <div class="right-column">
+  <div class="right-container">
     <app-navbar></app-navbar>
 
     <div class="content">
@@ -8,7 +8,7 @@
         <img src="../images/abstract-image-1.png" alt="Abstract image" class="main-header-img" />
         <div class="card-overlay">
           <img src="../images/artist-img-4.png" alt="Artist image" class="small-header-img" />
-          <div class="header-text">
+          <div class="header-text txt-light-neutral">
             <p class="text-md-semibold">Playlist</p>
             <h1>Mindnight Melodies</h1>
             <p class="text-md-semibold">New release “Impressions” coming June,16</p>
@@ -34,7 +34,7 @@
                 <img [src]="data.image" alt="Artist image" class="artist-img" />
                 <div class="song-wrap">
                   <div class="text-md-regular">{{ data.song }}</div>
-                  <div class="artist text-xs-medium">{{ data.artist }}</div>
+                  <div class="txt-light-primary-placeholder text-xs-medium">{{ data.artist }}</div>
                 </div>
               </div>
             </td>

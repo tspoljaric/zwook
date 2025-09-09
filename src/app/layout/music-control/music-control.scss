@@ -22,10 +22,6 @@ main {
     .artist {
       @include flex-center(center, start, column);
       gap: $spacing-4;
-
-      .artist-name {
-        color: map-get($theme-light, text-primary-placeholder);
-      }
     }
   }
 
@@ -43,11 +39,6 @@ main {
       @include flex-center(center, center);
       gap: $spacing-12;
       width: 100%;
-
-      .time {
-        @include text-style(text-xs, regular);
-        color: map-get($theme-light, text-primary-placeholder);
-      }
 
       .progress-bar {
         background-color: map-get($theme-light, border-primary-lighter);

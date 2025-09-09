@@ -1,5 +1,5 @@
 <main class="layout">
-  <div class="right-column">
+  <div class="right-container">
     <app-navbar></app-navbar>
     <div class="content">
       <form (ngSubmit)="save()" class="form">
@@ -15,17 +15,17 @@
           <div class="left-column">
             <div class="input-group">
               <label>Title</label>
-              <input class="input" type="text" [(ngModel)]="podcast.title" name="title"
+              <input class="input text-light-primary-placeholder" type="text" [(ngModel)]="podcast.title" name="title"
                 placeholder="Enter station title" required />
             </div>
             <div class="input-group">
               <label>Description link</label>
-              <input class="input" type="url" [(ngModel)]="podcast.descriptionLink" name="descriptionLink"
+              <input class="input text-light-primary-placeholder" type="url" [(ngModel)]="podcast.descriptionLink" name="descriptionLink"
                 placeholder="Enter website URL" />
             </div>
             <div class="input-group">
               <label>Description</label>
-              <textarea class="input" [(ngModel)]="podcast.description" name="description"
+              <textarea class="input text-light-primary-placeholder" [(ngModel)]="podcast.description" name="description"
                 placeholder="Enter station description"></textarea>
             </div>
             <label><input type="checkbox" [(ngModel)]="podcast.status" name="status" /> Status</label>
@@ -52,7 +52,7 @@
                 </svg>
               </span>
               <p class="text-md-medium"><span class="blue-text">Click to upload</span> or drag and drop</p>
-              <p class="text-sm">SVG, PNG, JPEG, TIFF or GIF</p>
+              <p class="txt-light-secondary text-sm-regular">SVG, PNG, JPEG, TIFF or GIF</p>
             </div>
             <button class="primary-default-filled-btn" type="button" (click)="uploadImage()" aria-label="Upload Image"
               [disabled]="!selectedFile">

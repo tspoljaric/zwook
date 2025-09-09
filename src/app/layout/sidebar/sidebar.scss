@@ -2,7 +2,7 @@
 @import '../../shared/styles/mixins.scss';
 @import '../../shared/styles/base.scss';
 
-.layout {
+.sidebar-layout {
   display: flex;
   height: 100vh;
 
@@ -12,7 +12,7 @@
     padding: $spacing-24 $spacing-24 56px $spacing-24;
     gap: $spacing-24;
     border-right: 1px solid map-get($theme-light, border-primary-lighter);
-    
+
 
     .logo {
       display: block;
@@ -36,7 +36,8 @@
         }
       }
 
-      .nav-item:hover,  .nav-item:active {
+      .nav-item:hover,
+      .nav-item:active {
         background-color: map-get($theme-light, surface-primary-active);
       }
 
@@ -76,10 +77,6 @@
           padding: $spacing-12;
           border-radius: $radius-20;
         }
-      }
-
-      .info-text {
-        color: map-get($theme-light, text-primary-placeholder);
       }
 
       .progress-bar {

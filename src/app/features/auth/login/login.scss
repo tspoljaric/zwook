@@ -32,10 +32,6 @@ main {
       .info-signup {
         @include flex-center(center, center);
         gap: $spacing-4;
-
-        .info-signup-text {
-          color: map-get($theme-light, text-primary-placeholder);
-        }
       }
     }
   }
@@ -45,7 +41,7 @@ main {
     border: 1px solid map-get($theme-light, border-primary);
     gap: $spacing-4;
     border-radius: $radius-12;
-    padding: 10px 12px;
+    padding: $spacing-10 $spacing-12;
     color: map-get($theme-light, text-primary-placeholder);
     margin-bottom: $spacing-20;
 
@@ -64,11 +60,6 @@ main {
     @include flex-center(center, center);
     gap: $spacing-20;
     margin-bottom: $spacing-20;
-
-    .small-text {
-      color: map-get($theme-light, text-primary-placeholder);
-      padding: 0 0.75rem;
-    }
 
     hr {
       flex: 1;

@@ -1,5 +1,5 @@
 <main class="layout">
-  <div class="right-column">
+  <div class="right-container">
     <app-navbar></app-navbar>
 
     <div class="content">
@@ -7,7 +7,7 @@
         <div class="card" *ngFor="let item of featured">
           <img [src]="item.image" alt="Abstract image" class="card-img" />
 
-          <div class="card-overlay">
+          <div class="card-overlay txt-light-neutral">
             <span class="card-icon">
               <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.14282 31.8569L31.8571 2.14258M31.8571 2.14258H20.4285M31.8571 2.14258V13.5711"
@@ -21,7 +21,7 @@
       </div>
 
       <div class="podcasts">
-        <div class="podcasts-title">
+        <div class="podcasts-title txt-light-neutral">
           <h2>Podcasts</h2>
           <a routerLink="/podcasts" class="btn-xs-empty">View All</a>
         </div>
@@ -38,7 +38,7 @@
 
               <div class="podcast-label">
                 <p class="podcast-title text-md-medium">{{ podcast.title }}</p>
-                <div class="premium-label text-xs-medium">
+                <div class="premium-label txt-light-neutral text-xs-medium">
                   <p>Premium</p>
                 </div>
               </div>
