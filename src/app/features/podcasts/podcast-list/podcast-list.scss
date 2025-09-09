@@ -1,0 +1,26 @@
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
+@import '../../../shared/styles/base.scss';
+
+.layout {
+  @include flex-direction(column);
+  height: 100vh;
+
+  .right-column {
+    @include flex-direction(column);
+    flex-grow: 1;
+    height: 100%;
+    overflow-y: hidden;
+
+    app-navbar {
+      flex: 0 0 auto;
+    }
+
+    .content {
+      flex: 1 1 auto;
+      padding: $spacing-36;
+      overflow-y: auto;
+
+    }
+}
+}

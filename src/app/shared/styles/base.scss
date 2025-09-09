@@ -46,7 +46,7 @@ app-music-control {
   z-index: 10;
 }
 
-app-album-list, app-playlist-list {
+app-album-list, app-playlist-list, app-podcast-form, app-podcast-form, app-podcast-list {
   width: 100vw;
 }
 
@@ -92,6 +92,11 @@ h4 {
   margin: 0px;
 }
 
+h5 {
+  @include text-style(display-sm, medium);
+  margin: 0px;
+}
+
 .layout {
   display: flex;
 
@@ -104,6 +109,7 @@ h4 {
 }
 
 .primary-default-filled-btn {
+  width: 100%;
   padding: $spacing-12 $spacing-20;
   border-radius: $radius-12;
   background-color: map-get($theme-light, surface-warning);
@@ -122,6 +128,7 @@ h4 {
 }
 
 .primary-default-empty-btn {
+  width: 100%;
   padding: $spacing-12 $spacing-20;
   border-radius: $radius-12;
   border: 1px solid map-get($theme-light, border-primary);

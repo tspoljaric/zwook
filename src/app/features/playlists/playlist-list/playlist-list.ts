@@ -36,7 +36,7 @@ export class PlaylistList {
       artist: 'Heartfelt Harmony',
       album: 'Serenade of the Soul',
       date: '04/17/2024',
-      time: '5:22',
+      time: '3:46',
     },
     {
       number: 4,
@@ -45,7 +45,7 @@ export class PlaylistList {
       artist: 'Solar Flare',
       album: 'Galactic Journey',
       date: '04/17/2024',
-      time: '5:22',
+      time: '1:55',
     },
     {
       number: 5,
@@ -54,7 +54,7 @@ export class PlaylistList {
       artist: 'Crystal Clear',
       album: 'Celestial Dreams',
       date: '04/17/2024',
-      time: '5:22',
+      time: '2:40',
     },
     {
       number: 6,
@@ -63,7 +63,7 @@ export class PlaylistList {
       artist: 'Enchanted Night',
       album: 'Twilight Whispers',
       date: '04/17/2024',
-      time: '5:22',
+      time: '2:38',
     },
     {
       number: 7,
@@ -72,7 +72,7 @@ export class PlaylistList {
       artist: 'Northern Lights',
       album: 'Aurora Borealis',
       date: '04/17/2024',
-      time: '5:22',
+      time: '4:15',
     },
     {
       number: 8,
@@ -81,7 +81,7 @@ export class PlaylistList {
       artist: 'Pulse of the City',
       album: 'Urban Beats',
       date: '04/17/2024',
-      time: '5:22',
+      time: '3:28',
     },
     {
       number: 9,
@@ -90,7 +90,7 @@ export class PlaylistList {
       artist: 'Deep Sea Symphony',
       album: 'Oceanic Reverie',
       date: '04/17/2024',
-      time: '5:22',
+      time: '4:45',
     },
     {
       number: 10,
@@ -99,7 +99,7 @@ export class PlaylistList {
       artist: 'Sunset Serenade',
       album: 'Dusk to Dawn',
       date: '04/17/2024',
-      time: '5:22',
+      time: '6:45',
     },
     {
       number: 11,
@@ -108,7 +108,7 @@ export class PlaylistList {
       artist: 'Moonlit Melody',
       album: 'Starlit Nights',
       date: '04/17/2024',
-      time: '5:22',
+      time: '6:45',
     },
     {
       number: 12,

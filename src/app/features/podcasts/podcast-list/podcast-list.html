@@ -1,0 +1,37 @@
+<main class="layout">
+  <div class="right-column">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <h2>Podcasts</h2>
+      <button (click)="createPodcast()">+ Create New</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Premium</th>
+            <th>Visible</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let podcast of podcasts">
+            <td>
+              <img *ngIf="podcast.imageUrl" [src]="podcast.imageUrl" alt="Cover" width="50" style="margin-right: 8px;">
+              {{ podcast.title }}
+            </td>
+            <td>{{ podcast.title }}</td>
+            <td>{{ podcast.status ? 'Active' : 'Inactive' }}</td>
+            <td>{{ podcast.premium ? 'Yes' : 'No' }}</td>
+            <td>{{ podcast.visible ? 'Yes' : 'No' }}</td>
+            <td>
+              <button (click)="editPodcast(podcast.id)">Edit</button>
+              <button (click)="deletePodcast(podcast.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
