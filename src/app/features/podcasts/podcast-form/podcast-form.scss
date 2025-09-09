@@ -41,11 +41,13 @@
           border-radius: $radius-12;
           padding: $spacing-12;
           border: 1px solid map-get($theme-light, border-primary);
+          font-family: 'Inter', sans-serif;
+
+          &::placeholder {
+            color: map-get($theme-light, text-primary-placeholder);
+          }
         }
 
-        &::placeholder {
-          color: map-get($theme-light, text-primary-placeholder);
-        }
       }
     }
 
@@ -81,6 +83,10 @@
         .blue-text {
           color: map-get($theme-light, text-brand);
         }
+      }
+
+      .primary-default-filled-btn {
+        width: 100%;
       }
     }
   }

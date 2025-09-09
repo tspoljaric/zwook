@@ -2,12 +2,16 @@
   <div class="right-container">
     <app-navbar></app-navbar>
     <div class="content">
-      <h2>Podcasts</h2>
-      <button (click)="createPodcast()">+ Create New</button>
+      <div class="header-container">
+        <h5>Podcasts</h5>
+        <button class="primary-default-filled-btn" (click)="createPodcast()">Create New</button>
+      </div>
 
-      <table>
+      <table class="data-table">
         <thead>
           <tr>
+            <th>Cover</th>
+
             <th>Title</th>
             <th>Status</th>
             <th>Premium</th>
@@ -22,7 +26,7 @@
               {{ podcast.title }}
             </td>
             <td>{{ podcast.title }}</td>
-            <td>{{ podcast.status ? 'Active' : 'Inactive' }}</td>
+            <td>{{ podcast.status ? 'Online' : 'Offline' }}</td>
             <td>{{ podcast.premium ? 'Yes' : 'No' }}</td>
             <td>{{ podcast.visible ? 'Yes' : 'No' }}</td>
             <td>

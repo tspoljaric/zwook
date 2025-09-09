@@ -2,3 +2,7 @@
 @import '../../../shared/styles/mixins.scss';
 @import '../../../shared/styles/base.scss';
 
+.header-container {
+    @include flex-center(space-between, center);
+    width: 100%;
+}

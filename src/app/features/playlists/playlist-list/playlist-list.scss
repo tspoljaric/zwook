@@ -35,38 +35,17 @@
   }
 }
 
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: $spacing-24;
+.container {
+  @include flex-center(start, center);
+  gap: $spacing-8;
 
-  .container {
-    @include flex-center(start, center);
-    gap: $spacing-8;
-
-    .artist-img {
-      width: 40px;
-      height: 40px;
-      border-radius: $radius-8;
-    }
-
-    .song-wrap {
-      @include flex-center(start, start, column);
-    }
+  .artist-img {
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-8;
   }
-}
 
-.data-table th,
-.data-table td {
-  padding: $spacing-12 $spacing-16;
-  text-align: left;
-}
-
-.data-table th {
-  @include text-style(text-sm, semibold);
-  color: map-get($theme-light, text-secondary);
-}
-
-.data-table thead {
-  border-bottom: 1px solid map-get($theme-light, border-primary);
+  .song-wrap {
+    @include flex-center(start, start, column);
+  }
 }

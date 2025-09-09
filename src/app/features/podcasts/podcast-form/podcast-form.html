@@ -15,17 +15,17 @@
           <div class="left-column">
             <div class="input-group">
               <label>Title</label>
-              <input class="input text-light-primary-placeholder" type="text" [(ngModel)]="podcast.title" name="title"
+              <input class="input text-light-primary-placeholder text-md-regular" type="text" [(ngModel)]="podcast.title" name="title"
                 placeholder="Enter station title" required />
             </div>
             <div class="input-group">
               <label>Description link</label>
-              <input class="input text-light-primary-placeholder" type="url" [(ngModel)]="podcast.descriptionLink" name="descriptionLink"
+              <input class="input text-light-primary-placeholder text-md-regular" type="url" [(ngModel)]="podcast.descriptionLink" name="descriptionLink"
                 placeholder="Enter website URL" />
             </div>
             <div class="input-group">
               <label>Description</label>
-              <textarea class="input text-light-primary-placeholder" [(ngModel)]="podcast.description" name="description"
+              <textarea class="input text-light-primary-placeholder text-md-regular" [(ngModel)]="podcast.description" name="description"
                 placeholder="Enter station description"></textarea>
             </div>
             <label><input type="checkbox" [(ngModel)]="podcast.status" name="status" /> Status</label>
