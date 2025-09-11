@@ -41,6 +41,7 @@
   @include flex-center(center, start, column);
   gap: $spacing-20;
   width: 100%;
+  margin-top: $spacing-40;
 
   .podcasts-title {
     @include flex-center(space-between, center);
@@ -146,6 +147,7 @@
 .categories {
   @include flex-center(center, start, column);
   gap: $spacing-20;
+  margin-top: $spacing-32;
 
   .featured-title,
   .categories-title {

@@ -2,7 +2,157 @@
 @import '../../../shared/styles/mixins.scss';
 @import '../../../shared/styles/base.scss';
 
-.header-container {
+.featured-container {
+  @include flex-center(start, center);
+  gap: $spacing-24;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 300px;
+
+    .card-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: $radius-8;
+      object-fit: cover;
+    }
+
+    .card-overlay {
+      @include flex-center(center, start, column);
+      gap: $spacing-16;
+      position: absolute;
+      bottom: $spacing-16;
+      left: $spacing-16;
+
+      .card-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.title-container {
     @include flex-center(space-between, center);
+    gap: $spacing-8;
     width: 100%;
+    z-index: 1;
+} 
+
+.recent-container {
+  @include flex-center(center, start, column);
+  margin-top: $spacing-40;
+
+  .container {
+    @include flex-center(start, center);
+    gap: $spacing-8;
+
+    .podcast-cover {
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-8;
+      object-fit: cover
+    }
+
+    .podcast-wrap {
+      @include flex-center(start, start, column);
+    }
+  }
+
+  .podcast-status {
+    pointer-events: auto;
+
+    &.online {
+      color: map-get($theme-light, text-success);
+    }
+
+    &.offline {
+      color: map-get($theme-light, surface-error);
+    }
+  }
+
+  .btn-container {
+    @include flex-center(start, center);
+    gap: $spacing-16;
+
+    .no-style {
+      border: none;
+      background-color: inherit;
+      cursor: pointer;
+      margin-top: $spacing-8;
+    }
+
+    .menu-wrapper {
+      position: relative;
+    
+      .menu-trigger {
+        cursor: pointer;
+      }
+    
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: map-get($theme-light, bg-secondary);
+        border: 1px solid map-get($theme-light, border-primary);
+        border-radius: $radius-12;
+        padding: $spacing-8;
+        z-index: 10;
+    
+        li {
+          list-style: none;
+          padding: $spacing-8 $spacing-12;
+          cursor: pointer;
+    
+          &:hover {
+            background-color: map-get($theme-light, bg-primary);
+          }
+        }
+      }
+    }
+    
+  }
+
+}
+
+.categories {
+  @include flex-center(center, start, column);
+  gap: $spacing-20;
+  margin-top: $spacing-32;
+
+  .filters {
+    @include flex-center(space-between, center);
+    gap: $spacing-8;
+
+    .active {
+      background-color: map-get($theme-light, surface-invert);
+      color: map-get($theme-light, text-invert);
+    }
+  }
+
+  .category-cards {
+    @include flex-center(center, center);
+    gap: $spacing-20;
+
+    .category-card {
+      @include flex-center(start, start, column);
+      background-color: map-get($theme-light, bg-secondary);
+      padding: $spacing-12;
+      gap: $spacing-8;
+      border-radius: $radius-12;
+      height: -webkit-fill-available;
+
+      .categ-img {
+        border-radius: $radius-8;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+  }
 }
