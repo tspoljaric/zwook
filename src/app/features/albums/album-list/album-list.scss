@@ -1,0 +1,61 @@
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
+@import '../../../shared/styles/base.scss';
+
+
+.title-container {
+  @include flex-center(space-between, center);
+  padding: $spacing-4;
+  width: 100%;
+  z-index: 1;
+}
+
+.section-container {
+  @include flex-center(center, start, column);
+  gap: $spacing-24;
+  width: 100%;
+  margin-top: $spacing-20;
+
+  .albums-grid {
+    @include flex-center(center, start);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: $spacing-20;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .album-card {
+      @include flex-center(center, start, column);
+      gap: $spacing-16;
+      background-color: map-get($theme-light, bg-secondary);
+      padding: $spacing-12;
+      gap: $spacing-8;
+      border-radius: $radius-12;
+      flex: 0 0 auto;
+      min-width: 150px;
+        max-width: 200px;
+      .cover-img {
+        width: 150px;
+        height: 150px;
+        border-radius: $radius-12;
+      }
+
+      .album-details {
+        @include flex-center(center, start, column);
+        gap: $spacing-8;
+
+        .album-info-small {
+          @include flex-center(center, center);
+          gap: $spacing-8;
+        }
+      }
+
+    }
+  }
+}

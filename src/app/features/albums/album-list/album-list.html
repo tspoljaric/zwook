@@ -1,0 +1,25 @@
+<main class="layout">
+  <div class="right-container">
+    <app-navbar></app-navbar>
+
+    <div class="content">
+      <div class="section-container" *ngFor="let section of sections">
+        <div class="title-container">
+          <h2>{{ section.title }}</h2>
+          <button class="btn-xs-empty">View All</button>
+        </div>
+        <div class="albums-grid">
+          <div class="album-card" *ngFor="let album of section.albums">
+            <img [src]="album.cover" alt="Album Cover" class="cover-img" />
+            <div class="album-details">
+              <p class="text-md-medium">{{ album.title}}</p>
+              <p class="txt-light-secondary text-sm-regular">{{ album.year }} • {{ album.artist }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-music-control></app-music-control>
+
+</main>
