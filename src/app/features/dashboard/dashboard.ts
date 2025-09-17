@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { Sidebar } from "../../layout/sidebar/sidebar";
-import { Navbar } from "../../layout/navbar/navbar";
-import { MusicControl } from "../../layout/music-control/music-control";
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [Sidebar, Navbar, MusicControl, CommonModule],
+  imports: [CommonModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })

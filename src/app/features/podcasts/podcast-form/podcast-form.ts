@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Navbar } from "../../../layout/navbar/navbar";
 import { Podcast } from '../podcast.model';
 import { PodcastService } from '../podcast';
 import { FormsModule } from '@angular/forms';
@@ -9,11 +8,16 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-podcast-form',
   standalone: true,
-  imports: [Navbar, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './podcast-form.html',
   styleUrls: ['./podcast-form.scss']
 })
 export class PodcastForm implements OnInit {
+  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
+  isDragOver = false;
+  isEdit = false;
+  selectedFile: File | null = null;
+
   podcast: Podcast = {
     id: 0,
     title: '',
@@ -26,30 +30,24 @@ export class PodcastForm implements OnInit {
     imageUrl: ''
   };
 
-  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
-  
-  isDragOver = false;
-  isEdit = false;
-  selectedFile: File | null = null;
-
   constructor(
     private podcastService: PodcastService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('id');
+    let idParam = this.route.snapshot.paramMap.get('id');
 
     if (idParam) {
-      const existingPodcast = this.podcastService.getById(+idParam);
+      let existingPodcast = this.podcastService.getById(+idParam);
       if (existingPodcast) {
         this.podcast = { ...existingPodcast };
         this.isEdit = true;
       }
     }
 
-    const savedImage = localStorage.getItem('podcastImage');
+    let savedImage = localStorage.getItem('podcastImage');
     if (savedImage && !this.podcast.imageUrl) {
       this.podcast.imageUrl = savedImage;
     }
@@ -88,7 +86,7 @@ export class PodcastForm implements OnInit {
   }
 
   onFileSelected(event: Event) {
-    const input = event.target as HTMLInputElement;
+    let input = event.target as HTMLInputElement;
     if (input.files?.length) {
       this.handleFile(input.files[0]);
     }
@@ -97,7 +95,7 @@ export class PodcastForm implements OnInit {
   private handleFile(file: File) {
     this.selectedFile = file;
 
-    const reader = new FileReader();
+    let reader = new FileReader();
     reader.onload = () => {
       this.podcast.imageUrl = reader.result as string;
     };
@@ -105,15 +103,15 @@ export class PodcastForm implements OnInit {
   }
 
   triggerFileInput() {
-        this.fileInput.nativeElement.click();
-      }
+    this.fileInput.nativeElement.click();
+  }
 
   uploadImage() {
     if (!this.selectedFile) return;
 
-    const reader = new FileReader();
+    let reader = new FileReader();
     reader.onload = () => {
-      const base64 = reader.result as string;
+      let base64 = reader.result as string;
       this.podcast.imageUrl = base64;
       localStorage.setItem('podcastImage', base64);
     };

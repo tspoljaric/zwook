@@ -3,54 +3,54 @@
 @import '../../shared/styles/base.scss';
 
 main {
-  background-color: map-get($theme-light, surface-primary);
+  @include flex-center(flex, space-between, center);
   padding: $spacing-12 $spacing-36;
+  background-color: map-get($theme-light, surface-primary);
   border-top: 1px solid map-get($theme-light, border-primary);
   box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.05);
-  @include flex-center(space-between, center);
 
   .artist-wrap {
-    @include flex-center(start, center);
-    padding: $spacing-8;
+    @include flex-center(flex, start, center);
     gap: $spacing-8;
+    padding: $spacing-8;
 
-    .song-img {
+    .artist-img {
       width: 40px;
       height: 40px;
     }
 
-    .artist {
-      @include flex-center(center, start, column);
+    .artist-info {
+      @include flex-center(flex, center, start, column);
       gap: $spacing-4;
     }
   }
 
-  .player-controls {
-    @include flex-center(center, center, column);
+  .player-controls-wrap {
+    @include flex-center(flex, center, center, column);
     gap: $spacing-20;
     width: 40%;
 
     .controls {
-      @include flex-center(center, center);
+      @include flex-center(flex, center, center);
       gap: $spacing-36;
     }
 
     .loader {
-      @include flex-center(center, center);
+      @include flex-center(flex, center, center);
       gap: $spacing-12;
       width: 100%;
 
       .progress-bar {
+        overflow: hidden;
+        width: 100%;
+        height: 4px;
         background-color: map-get($theme-light, border-primary-lighter);
         border-radius: $radius-20;
-        height: 4px;
-        width: 100%;
-        overflow: hidden;
 
         .progress-fill {
-          background-color: map-get($theme-light, text-primary);
           width: 25%;
           height: 100%;
+          background-color: map-get($theme-light, text-primary);
           border-radius: inherit;
           transition: width 0.3s ease;
         }
@@ -59,25 +59,36 @@ main {
   }
 
   .volume {
-    @include flex-center(center, center);
+    @include flex-center(flex, center, center);
     gap: $spacing-12;
     width: 100%;
     max-width: 200px;
 
     .progress-bar {
-        background-color: map-get($theme-light, border-primary-lighter);
-        border-radius: $radius-20;
-        height: 4px;
-        width: 100%;
-        overflow: hidden;
+      overflow: hidden;
+      width: 100%;
+      height: 4px;
+      background-color: map-get($theme-light, border-primary-lighter);
+      border-radius: $radius-20;
 
-        .progress-fill {
-          background-color: map-get($theme-light, text-primary);
-          width: 85%;
-          height: 100%;
-          border-radius: inherit;
-          transition: width 0.3s ease;
-        }
+      .progress-fill {
+        width: 85%;
+        height: 100%;
+        background-color: map-get($theme-light, text-primary);
+        border-radius: inherit;
+        transition: width 0.3s ease;
       }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .player-controls-wrap {
+    display: flex;
+    align-items: end !important;
+  }
+
+  .hide-icon {
+    display: none !important;
   }
 }

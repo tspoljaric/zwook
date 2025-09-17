@@ -15,9 +15,6 @@ export class Register {
   password: string = '';
   passwordConfirmation: string = '';
 
-  errorMessage: string | null = null;
-  isLoading: boolean = false;
-
   constructor(private router: Router) {}
 
   onLogin() {

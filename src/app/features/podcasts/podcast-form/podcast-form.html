@@ -1,8 +1,7 @@
 <main class="layout">
   <div class="right-container">
-    <app-navbar></app-navbar>
     <div class="content">
-      <form (ngSubmit)="save()" class="form">
+      <form (ngSubmit)="save()" class="form-container">
         <div class="header-container">
           <h5>{{ isEdit ? 'Edit Podcast' : 'Create New Podcast' }}</h5>
           <div class="btns-container">
@@ -11,7 +10,7 @@
           </div>
         </div>
 
-        <div class="form-container">
+        <div class="form">
           <div class="left-column">
             <div class="input-group">
               <label>Title</label>
@@ -35,7 +34,7 @@
           </div>
 
           <div class="right-column">
-            <div class="border-container" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
+            <div class="upload-container" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
               (drop)="onDrop($event)" [class.dragover]="isDragOver" (click)="triggerFileInput()">
               <span class="upload-icon">
                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">

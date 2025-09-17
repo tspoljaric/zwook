@@ -3,17 +3,15 @@
 @import '../../../shared/styles/base.scss';
 
 .featured-container {
-  @include flex-center(start, center);
-  gap: $spacing-24;
-  flex-wrap: wrap;
-  width: 100%;
+  @include horizontal-scroll($spacing-24);
 
-  .card {
+  .featured-card {
+    flex: 1 1 300px;
     position: relative;
     overflow: hidden;
-    flex: 1 1 300px;
+    min-width: 260px;
 
-    .card-img {
+    .featured-img {
       display: block;
       width: 100%;
       height: auto;
@@ -21,138 +19,113 @@
       object-fit: cover;
     }
 
-    .card-overlay {
-      @include flex-center(center, start, column);
+    .featured-overlay {
+      @include flex-center(flex, center, flex-start, column);
       gap: $spacing-16;
       position: absolute;
       bottom: $spacing-16;
       left: $spacing-16;
-
-      .card-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
     }
   }
 }
 
-.title-container {
-    @include flex-center(space-between, center);
-    gap: $spacing-8;
-    width: 100%;
-    z-index: 1;
-} 
-
+.categories-container,
 .recent-container {
-  @include flex-center(center, start, column);
-  margin-top: $spacing-40;
+  @include flex-direction(column);
+  gap: $spacing-20;
+  margin-top: $spacing-32;
 
-  .container {
-    @include flex-center(start, center);
+  .title-container {
+    @include flex-center(flex, space-between, center);
+    width: 100%;
+    padding: $spacing-8;
+    z-index: 1;
+  }
+
+  .category-cards {
+    @include horizontal-scroll($spacing-24);
+
+    .category-card {
+      @include card-style;
+    }
+  }
+
+  .artist-container {
+    display: flex;
+    align-items: center;
     gap: $spacing-8;
 
     .podcast-cover {
       width: 40px;
       height: 40px;
       border-radius: $radius-8;
-      object-fit: cover
+      object-fit: cover;
     }
 
     .podcast-wrap {
-      @include flex-center(start, start, column);
+      @include flex-align(flex, flex-start, column);
+      gap: $spacing-4;
     }
   }
 
-  .podcast-status {
-    pointer-events: auto;
+  .podcast-status.online {
+    color: map-get($theme-light, text-success);
+  }
 
-    &.online {
-      color: map-get($theme-light, text-success);
-    }
-
-    &.offline {
-      color: map-get($theme-light, surface-error);
-    }
+  .podcast-status.offline {
+    color: map-get($theme-light, surface-error);
   }
 
   .btn-container {
-    @include flex-center(start, center);
+    @include flex-center(flex, start, center);
     gap: $spacing-16;
-
-    .no-style {
-      border: none;
-      background-color: inherit;
-      cursor: pointer;
-      margin-top: $spacing-8;
-    }
 
     .menu-wrapper {
       position: relative;
-    
+
       .menu-trigger {
+        margin-top: $spacing-8;
+        border: none;
+        background-color: inherit;
         cursor: pointer;
       }
-    
+
       .dropdown {
         position: absolute;
         top: 100%;
         right: 0;
+        z-index: 10;
+        padding: $spacing-8;
         background-color: map-get($theme-light, bg-secondary);
         border: 1px solid map-get($theme-light, border-primary);
         border-radius: $radius-12;
-        padding: $spacing-8;
-        z-index: 10;
-    
+
         li {
-          list-style: none;
           padding: $spacing-8 $spacing-12;
+          list-style: none;
           cursor: pointer;
-    
+
           &:hover {
             background-color: map-get($theme-light, bg-primary);
           }
         }
       }
     }
-    
   }
-
 }
 
-.categories {
-  @include flex-center(center, start, column);
-  gap: $spacing-20;
-  margin-top: $spacing-32;
 
-  .filters {
-    @include flex-center(space-between, center);
-    gap: $spacing-8;
-
-    .active {
-      background-color: map-get($theme-light, surface-invert);
-      color: map-get($theme-light, text-invert);
-    }
+@media (max-width: 768px) {
+  .hide-element {
+    display: none !important;
   }
 
-  .category-cards {
-    @include flex-center(center, center);
-    gap: $spacing-20;
+  h4 {
+    font-size: 24px;
+    line-height: 36px;
+  }
 
-    .category-card {
-      @include flex-center(start, start, column);
-      background-color: map-get($theme-light, bg-secondary);
-      padding: $spacing-12;
-      gap: $spacing-8;
-      border-radius: $radius-12;
-      height: -webkit-fill-available;
-
-      .categ-img {
-        border-radius: $radius-8;
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-      }
-    }
+  .featured-overlay {
+    gap: $spacing-8;
   }
 }

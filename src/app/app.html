@@ -1,4 +1,23 @@
-<div class="app-layout" [class.flex-column]="flexDirection === 'column'" [class.flex-row]="flexDirection === 'row'">
-    <app-sidebar *ngIf="showSidebar"></app-sidebar>
-    <router-outlet></router-outlet>
+<header class="app-header" *ngIf="isMobile() && !hideNavbar"> 
+  <button class="app-header-menu" (click)="toggleSidebar()">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.5 12.002H14.5" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M1.5 8.00201H14.5" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M1.5 4.00201H14.5" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+  <app-navbar ></app-navbar>
+</header>
+
+<div class="main-layout" [class.flex-column]="flexDirection === 'column'" [class.flex-row]="flexDirection === 'row'">
+  <app-sidebar *ngIf="showSidebar" [open]="showSidebar && isMobile()" (closeSidebar)="toggleSidebar()">
+  </app-sidebar>
+
+  <div class="main-content">
+    <app-navbar *ngIf="!isMobile() && !hideNavbar"></app-navbar>
+    <main class="dashboard-content">
+      <router-outlet></router-outlet>
+    </main>
+    <app-music-control *ngIf="showMusicControl"></app-music-control>
+  </div>
 </div>

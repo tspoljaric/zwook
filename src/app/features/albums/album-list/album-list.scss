@@ -2,60 +2,41 @@
 @import '../../../shared/styles/mixins.scss';
 @import '../../../shared/styles/base.scss';
 
-
-.title-container {
-  @include flex-center(space-between, center);
-  padding: $spacing-4;
-  width: 100%;
-  z-index: 1;
-}
-
 .section-container {
-  @include flex-center(center, start, column);
+  @include flex-direction(column);
   gap: $spacing-24;
-  width: 100%;
   margin-top: $spacing-20;
 
-  .albums-grid {
-    @include flex-center(center, start);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: $spacing-20;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .title-container {
+    @include flex-center(flex, space-between, center);
+    padding: $spacing-4;
+    z-index: 1;
+    width: 100%;
+  }
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  .albums-wrap {
+    @include horizontal-scroll($spacing-24);
 
     .album-card {
-      @include flex-center(center, start, column);
-      gap: $spacing-16;
-      background-color: map-get($theme-light, bg-secondary);
-      padding: $spacing-12;
-      gap: $spacing-8;
-      border-radius: $radius-12;
-      flex: 0 0 auto;
-      min-width: 150px;
-        max-width: 200px;
-      .cover-img {
-        width: 150px;
-        height: 150px;
-        border-radius: $radius-12;
-      }
+      @include card-style;
 
       .album-details {
-        @include flex-center(center, start, column);
+        @include flex-align(flex, start, column);
         gap: $spacing-8;
 
         .album-info-small {
-          @include flex-center(center, center);
+          @include flex-center(flex, center, center);
           gap: $spacing-8;
         }
       }
 
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    gap: $spacing-16 !important;
+    margin: 0px 0px 12px 0px !important;
   }
 }

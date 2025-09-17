@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Podcast } from '../podcast.model';
 import { PodcastService } from '../podcast';
-import { Navbar } from '../../../layout/navbar/navbar';
 import { CommonModule } from '@angular/common';
-import { MusicControl } from "../../../layout/music-control/music-control";
 
 @Component({
   selector: 'app-podcast-list',
-  imports: [Navbar, CommonModule, MusicControl],
+  imports: [CommonModule],
   templateUrl: './podcast-list.html',
   styleUrls: ['./podcast-list.scss']
 })
+
 export class PodcastList implements OnInit {
   podcasts: Podcast[] = [];
   featured = [
@@ -58,7 +57,8 @@ export class PodcastList implements OnInit {
       image: '../images/categ-4.jpg',
       artist: 'Gaming'
     }
-  ]
+  ];
+  openMenuId: number | null = null;
 
   constructor(private podcastService: PodcastService, private router: Router) { }
 
@@ -75,10 +75,7 @@ export class PodcastList implements OnInit {
     this.podcasts = this.podcastService.getAll();
   }
 
-  openMenuId: number | null = null;
-
   toggleMenu(id: number) {
     this.openMenuId = this.openMenuId === id ? null : id;
   }
-
 }

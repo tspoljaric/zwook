@@ -4,53 +4,49 @@
 
 main {
   display: flex;
-  min-height: 100vh;
   flex-grow: 1;
+  min-height: 100vh;
   overflow: hidden;
 }
 
-.left-section {
+.form-section {
+  @include flex-center(flex, center, center);
   flex-grow: 1;
-  @include flex-center(center, center);
-  background-color: map-get($theme-light, bg-primary);
   width: 50%;
+  background-color: map-get($theme-light, bg-primary);
 
-  .login-container {
-    @include flex-center(center, center, column);
+  .register-container {
+    @include flex-center(flex, center, center, column);
     gap: $spacing-20;
+    padding: $spacing-24;
     width: 100%;
     max-width: 400px;
     background-color: map-get($theme-light, bg-secondary);
-    padding: $spacing-24;
     border: 1px solid map-get($theme-light, border-primary);
     border-radius: $radius-20;
 
-    .login-info-wrapper {
-      @include flex-center(center, center, column);
+    .register-info-wrapper {
+      @include flex-center(flex, center, center, column);
       gap: $spacing-4;
 
-      .info-signup {
-        @include flex-center(center, center);
+      .register-info-signup {
+        @include flex-center(flex, center, center);
         gap: $spacing-4;
       }
     }
   }
 
   .input-group {
-    @include flex-center(center, center);
-    border: 1px solid map-get($theme-light, border-primary);
+    @include flex-center(flex, center, center);
     gap: $spacing-4;
-    border-radius: $radius-12;
     padding: $spacing-10 $spacing-12;
-    color: map-get($theme-light, text-primary-placeholder);
     margin-bottom: $spacing-20;
+    border: 1px solid map-get($theme-light, border-primary);
+    border-radius: $radius-12;
+    color: map-get($theme-light, text-primary-placeholder);
 
     &::placeholder {
       color: map-get($theme-light, text-primary-placeholder);
-    }
-
-    .input-icon {
-      height: 16px;
     }
   }
 
@@ -58,14 +54,14 @@ main {
     margin-bottom: $spacing-20;
   }
 
-  button {
+  .register-btn {
+    margin-bottom: $spacing-20;
     width: 100%;
     cursor: pointer;
-    margin-bottom: $spacing-20;
   }
 
   .divider {
-    @include flex-center(center, center);
+    @include flex-center(flex, center, center);
     gap: $spacing-20;
     margin-bottom: $spacing-20;
 
@@ -77,12 +73,11 @@ main {
   }
 }
 
-
-.right-section {
-  background-color: map-get($theme-light, surface-warning);
+.image-section {
   position: relative;
-  width: 50%;
   padding: 2rem;
+  width: 50%;
+  background-color: map-get($theme-light, surface-warning);
 
   .left-lines,
   .right-lines {
@@ -104,36 +99,34 @@ main {
   }
 
   .dash-img {
-    width: 60%;
     bottom: 0;
     right: 0;
+    width: 60%;
   }
 
   .categ-img {
-    width: 20%;
     height: 20%;
     right: 60px;
     bottom: 20rem;
+    width: 20%;
   }
 
   .categ-img-1 {
-    width: 20%;
     height: 20%;
     bottom: 80px;
     left: 270px;
-
+    width: 20%;
   }
 
 }
 
-/* RESPONSIVE STYLES */
 @media (max-width: 900px) {
-  .right-section {
+  .image-section {
     display: none;
     padding: 1rem;
   }
 
-  .login-container {
+  .register-container {
     width: 80% !important;
     max-width: none;
 
@@ -145,7 +138,7 @@ main {
 
 @media (max-width: 500px) {
   .input-group {
-    @include flex-center(center, center, row);
+    @include flex-center(flex, center, center);
     gap: $spacing-4;
   }
 

@@ -1,13 +1,10 @@
 <main class="layout">
-
   <div class="right-container">
-    <app-navbar></app-navbar>
-
     <div class="content">
       <div class="header-container">
         <img src="../images/abstract-image-1.png" alt="Abstract image" class="main-header-img" />
-        <div class="card-overlay">
-          <img src="../images/artist-img-4.png" alt="Artist image" class="small-header-img" />
+        <div class="header-overlay">
+          <img src="../images/artist-img-4.png" alt="Artist image" class="small-header-img hide-element" />
           <div class="header-text txt-light-neutral">
             <p class="text-md-semibold">Playlist</p>
             <h1>Mindnight Melodies</h1>
@@ -19,18 +16,18 @@
       <table class="data-table">
         <thead>
           <tr>
-            <th>#</th>
+            <th class="hide-element">#</th>
             <th>Title</th>
-            <th>Album</th>
-            <th>Data Added</th>
-            <th>Song Time</th>
+            <th class="hide-element">Album</th>
+            <th class="hide-element">Data Added</th>
+            <th>Duration</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let data of playlistData">
-            <td>{{ data.number }}</td>
+            <td class="hide-element">{{ data.number }}</td>
             <td>
-              <div class="container">
+              <div class="artist-wrap">
                 <img [src]="data.image" alt="Artist image" class="artist-img" />
                 <div class="song-wrap">
                   <p class="text-md-regular">{{ data.song }}</p>
@@ -38,8 +35,8 @@
                 </div>
               </div>
             </td>
-            <td>{{ data.album }}</td>
-            <td>{{ data.date }}</td>
+            <td class="hide-element">{{ data.album }}</td>
+            <td class="hide-element">{{ data.date }}</td>
             <td>{{ data.time }}</td>
           </tr>
         </tbody>
@@ -47,6 +44,4 @@
 
     </div>
   </div>
-  <app-music-control></app-music-control>
-
 </main>

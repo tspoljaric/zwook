@@ -1,32 +1,29 @@
 <main class="layout">
   <div class="right-container">
-    <app-navbar></app-navbar>
-
     <div class="content">
       <div class="featured-container">
-        <div class="card" *ngFor="let item of featured">
-          <img [src]="item.image" alt="Abstract image" class="card-img" />
-
-          <div class="card-overlay txt-light-neutral">
-            <span class="card-icon">
+        <div class="featured-card" *ngFor="let item of featured">
+          <img [src]="item.image" alt="Abstract image" class="featured-img" />
+          <div class="featured-overlay txt-light-neutral">
+            <span class="featured-icon">
               <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.14282 31.8569L31.8571 2.14258M31.8571 2.14258H20.4285M31.8571 2.14258V13.5711"
                   stroke="#FCFCFD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </span>
-            <h4 class="card-title">{{ item.title }}</h4>
+            <h4>{{ item.title }}</h4>
             <p class="text-md-semibold">{{ item.subtitle }}</p>
           </div>
         </div>
       </div>
 
-      <div class="podcasts">
-        <div class="podcasts-title">
+      <div class="podcasts-section">
+        <div class="podcasts-title-wrap">
           <h2>Podcasts</h2>
           <a routerLink="/podcasts" class="btn-xs-empty">View All</a>
         </div>
 
-        <div class="podcast-cards">
+        <div class="podcast-cards-wrap">
           <div class="podcast-card" *ngFor="let podcast of podcasts">
             <img [src]="podcast.image" alt="{{ podcast.title }} Cover" class="podcast-img" />
             <div class="podcast-overlay">
@@ -59,26 +56,25 @@
 
         <div class="featured-cards">
           <div class="featured-card" *ngFor="let feat of featuredArtists">
-            <img [src]="feat.image" alt="Artist" class="artist-img" />
+            <img [src]="feat.image" alt="Artist" class="cover-img" />
             <p class="text-md-medium">{{ feat.artist }}</p>
           </div>
         </div>
       </div>
 
-      <div class="categories">
+      <div class="categories-section">
         <div class="categories-title">
           <h2>Categories</h2>
           <a routerLink="/categories" class="btn-xs-empty">View All</a>
         </div>
         <div class="category-cards">
           <div class="category-card" *ngFor="let category of categories">
-            <img [src]="category.image" alt="Artist" class="artist-img" />
-            <p class="artist-name">{{ category.artist }}</p>
+            <img [src]="category.image" alt="Artist" class="cover-img" />
+            <p class="text-md-medium">{{ category.artist }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <app-music-control></app-music-control>
 
 </main>

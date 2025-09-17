@@ -1,7 +1,9 @@
-<main class="sidebar-layout">
-
+<main class="sidebar-layout" [class.open]="open">
   <aside class="sidebar">
+    <button class="close-btn" (click)="closeSidebar.emit()">✕</button>
+
     <img src="../images/logo-light.png" alt="Zwook logo" class="logo" />
+
     <nav>
       <ul class="nav-list">
         <li class="nav-item">
@@ -156,7 +158,6 @@
           </a>
           <a routerLink="/podcasts/create" class="btn-sm">Add new</a>
         </li>
-
       </ul>
     </nav>
 
@@ -179,7 +180,8 @@
         <h3>Update Premium</h3>
       </div>
 
-      <p class="txt-light-primary-placeholder text-md-medium">Your Premium account is coming to an end. Please update your credit card
+      <p class="txt-light-primary-placeholder text-md-medium">Your Premium account is coming to an end. Please update
+        your credit card
         information.</p>
 
       <div class="progress-bar">
@@ -193,3 +195,5 @@
     </div>
   </aside>
 </main>
+
+<div class="sidebar-overlay"></div>

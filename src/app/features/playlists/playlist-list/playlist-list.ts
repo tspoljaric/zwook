@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { Navbar } from "../../../layout/navbar/navbar";
-import { MusicControl } from "../../../layout/music-control/music-control";
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-playlist-list',
-  imports: [Navbar, MusicControl, CommonModule],
+  imports: [CommonModule],
   templateUrl: './playlist-list.html',
   styleUrl: './playlist-list.scss'
 })

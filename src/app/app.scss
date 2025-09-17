@@ -1,0 +1,70 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/mixins.scss';
+@import 'shared/styles/base.scss';
+
+app-navbar {
+  flex: 1;
+}
+
+app-music-control {
+  position: fixed;
+  bottom: 0;
+  z-index: 500;
+  width: 100%;
+}
+
+
+.app-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+  box-sizing: border-box;
+  padding: $spacing-12;
+  width: 100%;
+  background-color: map-get($theme-light, bg-primary);
+
+  .app-header-menu {
+    display: none;
+    border: none;
+    background: none;
+
+    @media (max-width: 767px) {
+      @include flex-center(inline-flex, center, center);
+      border: none;
+      background: none;
+    }
+  }
+}
+
+.main-layout {
+  display: flex;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-y: hidden;
+
+  &.flex-row {
+    flex-direction: row;
+  }
+
+  &.flex-column {
+    flex-direction: column;
+  }
+
+
+  .main-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-bottom: 5rem;
+  }
+}

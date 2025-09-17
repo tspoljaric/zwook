@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin text-style($size-name, $weight-name) {
   $size: map-get($text-sizes, $size-name);
   $weight: map-get($text-weights, $weight-name);
@@ -7,9 +9,15 @@
   font-weight: $weight;
 }
 
-@mixin flex-center($justify: center, $align: center, $direction: row) {
-  display: flex;
+@mixin flex-center($display: flex, $justify: center, $align: center, $direction: row) {
+  display: $display;
   justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin flex-align($display: flex, $align: center, $direction: row) {
+  display: $display;
   align-items: $align;
   flex-direction: $direction;
 }
@@ -17,4 +25,39 @@
 @mixin flex-direction($direction: row) {
   display: flex;
   flex-direction: $direction;
+}
+
+@mixin horizontal-scroll($gap: $spacing-16) {
+  display: flex;
+  align-items: flex-start;
+  gap: $gap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  margin: 0 -24px;
+  padding: 0 24px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@mixin card-style {
+  @include flex-center(start, flex-start, column);
+  gap: $spacing-8;
+  flex: 0 0 180px;
+  max-width: 200px;
+  height: 200px;
+  background-color: map-get($theme-light, bg-secondary);
+  padding: $spacing-12;
+  border-radius: $radius-12;
+
+  .cover-img {
+    border-radius: $radius-8;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
 }

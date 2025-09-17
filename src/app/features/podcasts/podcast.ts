@@ -48,7 +48,7 @@ export class PodcastService {
   ];
 
   private load(): Podcast[] {
-    const data = localStorage.getItem(this.storageKey);
+    let data = localStorage.getItem(this.storageKey);
 
     if (data) {
       return JSON.parse(data);
@@ -64,14 +64,14 @@ export class PodcastService {
   }
 
   getAll(): Podcast[] {
-    const saved = this.load();
-    const combined = [...this.defaultPodcasts, ...saved];
-  
-    const unique = combined.filter(
+    let saved = this.load();
+    let combined = [...this.defaultPodcasts, ...saved];
+
+    let unique = combined.filter(
       (podcast, index, self) =>
         index === self.findIndex(p => p.id === podcast.id)
     );
-  
+
     return unique;
   }
 
@@ -80,8 +80,8 @@ export class PodcastService {
   }
 
   create(podcast: Podcast) {
-    const podcasts = this.load();
-    const storedId = localStorage.getItem('nextId');
+    let podcasts = this.load();
+    let storedId = localStorage.getItem('nextId');
     let nextId = storedId ? +storedId : 1;
 
     podcast.id = nextId++;
@@ -92,8 +92,8 @@ export class PodcastService {
   }
 
   update(id: number, updatedPodcast: Podcast): void {
-    const podcasts = this.load();
-    const index = podcasts.findIndex(p => p.id === id);
+    let podcasts = this.load();
+    let index = podcasts.findIndex(p => p.id === id);
     if (index > -1) {
       podcasts[index] = { ...updatedPodcast, id };
       this.saveAll(podcasts);
@@ -101,7 +101,7 @@ export class PodcastService {
   }
 
   delete(id: number): void {
-    const podcasts = this.load().filter(p => p.id !== id);
+    let podcasts = this.load().filter(p => p.id !== id);
     this.saveAll(podcasts);
   }
 }

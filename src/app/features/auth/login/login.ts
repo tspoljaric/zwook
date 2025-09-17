@@ -11,8 +11,6 @@ import { Router, RouterLink } from '@angular/router';
 export class Login {
   email: string = '';
   password: string = '';
-  errorMessage: string | null = null;
-  isLoading: boolean = false;
 
   constructor(private router: Router) {}
 

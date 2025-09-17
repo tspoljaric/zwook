@@ -3,55 +3,82 @@
 @import '../../shared/styles/base.scss';
 
 nav {
-  @include flex-center(space-between, center);
-  padding: $spacing-12 $spacing-24;
+  @include flex-center(flex, space-between, center);
   gap: $spacing-20;
+  padding: $spacing-12 $spacing-24;
+  width: 100%;
+  box-sizing: border-box;
 
-  .nav-left {
-    width: 25%;
-    .nav-search {
-      @include flex-center(center, center);
-      gap: $spacing-8;
-      background-color: map-get($theme-light, surface-primary);
-      border: 1px solid map-get($theme-light, border-primary);
-      border-radius: $radius-12;
-      padding: $spacing-12;
+  .nav-search {
+    @include flex-center(flex, center, center);
+    gap: $spacing-8;
+    padding: $spacing-12;
+    width: 100%;
+    background-color: map-get($theme-light, surface-primary);
+    border: 1px solid map-get($theme-light, border-primary);
+    border-radius: $radius-12;
+    transition: width 0.3s ease;
+
+    button {
+      @include flex-center(flex, center, center);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 14px;
+    }
+
+
+    @media (max-width: 768px) {
+      padding: 0;
+      width: auto;
+      background: none;
+      border: none;
+
+      input {
+        display: none;
+      }
 
       button {
-        background: transparent;
-        border: none;
-        @include flex-center(center, center);
-        cursor: pointer;
+        padding: 0;
       }
     }
   }
 
   .nav-right {
-    @include flex-center(center, center);
+    @include flex-center(flex, center, center);
     gap: $spacing-20;
-
+    min-width: 0;
     .nav-icon {
       padding: $spacing-8;
+
       &:hover {
-      background-color: map-get($theme-light, surface-primary-active);
-      padding: $spacing-8;
-      border-radius: 50%;
+        padding: $spacing-8;
+        background-color: map-get($theme-light, surface-primary-active);
+        border-radius: 50%;
       }
-    }  
+    }
 
     .avatar {
-      @include flex-center(center, center);
+      @include flex-center(flex, center, center);
       gap: $spacing-12;
 
       .avatar-image {
         position: relative;
 
         .avatar-img {
-          width: 40px;
-          height: 40px;
-          position: relative;
           display: block;
+          width: 40px;
+          position: relative;
+          height: 40px;
         }
+
         .avatar_indicator {
           position: absolute;
           bottom: 0;
@@ -65,11 +92,16 @@ nav {
       }
 
       .avatar-text {
-        @include flex-center(start, start, column);
+        @include flex-center(flex, start, start, column);
+
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
     }
   }
 
- 
-
+  @media (max-width: 768px) {
+    gap: 80px;
+  }
 }

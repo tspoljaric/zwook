@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -7,11 +7,12 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [NgIf, RouterModule],
   templateUrl: './sidebar.html',
-  styleUrl: './sidebar.scss'
+  styleUrls: ['./sidebar.scss']
 })
 export class Sidebar {
+  @Output() closeSidebar = new EventEmitter<void>();
+  @Input() open: boolean = false;
   showCard: boolean = true;
-
 
   dismissCard() {
     this.showCard = false;
