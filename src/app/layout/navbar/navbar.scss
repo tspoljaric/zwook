@@ -8,6 +8,7 @@ nav {
   padding: $spacing-12 $spacing-24;
   width: 100%;
   box-sizing: border-box;
+  background-color: map-get($theme-light, bg-primary);
 
   .nav-search {
     @include flex-center(flex, center, center);

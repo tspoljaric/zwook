@@ -26,35 +26,35 @@ export class PodcastList implements OnInit {
 
   categories = [
     {
-      image: '../images/categ-3.jpg',
+      image: '../images/artist-img-1.png',
       artist: 'Comedy'
     },
     {
-      image: '../images/categ-8.jpg',
+      image: '../images/artist-img-2.png',
       artist: 'History'
     },
     {
-      image: '../images/categ-1.jpg',
+      image: '../images/artist-img-3.png',
       artist: 'Technology & Innovation'
     },
     {
-      image: '../images/categ-7.jpg',
+      image: '../images/artist-img-4.png',
       artist: 'Politics'
     },
     {
-      image: '../images/categ-2.jpg',
+      image: '../images/artist-img-5.png',
       artist: 'Sports News'
     },
     {
-      image: '../images/categ-6.jpg',
+      image: '../images/artist-img-6.png',
       artist: 'Food & Cooking'
     },
     {
-      image: '../images/categ-5.jpg',
+      image: '../images/artist-img-7.png',
       artist: 'AI & Future Tech'
     },
     {
-      image: '../images/categ-4.jpg',
+      image: '../images/artist-img-8.png',
       artist: 'Gaming'
     }
   ];

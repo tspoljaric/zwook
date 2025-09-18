@@ -52,6 +52,10 @@ main {
 
   .checkbox-wrap {
     margin-bottom: $spacing-20;
+    .checkbox {
+      // border: 1px solid map-get($theme-light, border-primary) !important;
+
+    }
   }
 
   .register-btn {

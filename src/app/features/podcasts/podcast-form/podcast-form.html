@@ -60,8 +60,36 @@
             <input #fileInput type="file" accept=".svg,.png,.jpeg,.jpg,.tiff,.gif" (change)="onFileSelected($event)"
               hidden />
 
-            <div *ngIf="podcast.imageUrl">
-              <img [src]="podcast.imageUrl" alt="Podcast Cover" width="150" />
+            <div *ngIf="selectedFile" class="file-card">
+              <div class="file-info">
+                <div class="file-icon">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.09292 0.059831C3.61229 0.408879 2.46459 1.69742 2.09112 3.42978L2 3.85257V24.0047V44.1569L2.09112 44.5797C2.4418 46.2065 3.49228 47.4611 4.86407 47.8916L5.20939 48H20.9923H36.7751L37.1205 47.8916C38.364 47.5014 39.365 46.4161 39.7814 45.0068C40.0204 44.1978 40.0067 45.3827 39.9944 26.6949C39.9837 10.5216 39.9791 9.55182 39.9116 9.25691C39.7341 8.48195 39.4602 7.85269 39.0709 7.32523C38.665 6.77548 33.6112 0.988416 33.3586 0.784156C33.0315 0.5198 32.5455 0.253522 32.1439 0.11863L31.8189 0.00948658L18.5954 0.00175238C7.54631 -0.00468479 5.32602 0.00487488 5.09292 0.059831ZM5.37993 3.08126C5.03409 3.22711 4.74846 3.56223 4.61443 3.97934C4.54147 4.20642 4.53907 4.84452 4.53907 24.0034C4.53907 43.7019 4.53944 43.7942 4.62065 44.0508C4.71555 44.3507 4.98209 44.7019 5.23697 44.8627L5.41251 44.9736H20.9923H36.572L36.7476 44.8627C37.0024 44.7019 37.269 44.3507 37.3639 44.0508C37.445 43.7945 37.4455 43.698 37.4455 26.8913C37.4455 8.38078 37.4645 9.8058 37.2121 9.40467C37.1505 9.30682 36.2775 8.27817 35.272 7.11876C34.2665 5.95935 33.0957 4.60745 32.6703 4.11457C31.9938 3.33092 31.8673 3.20539 31.6632 3.11513L31.4299 3.0119L18.4821 3.01401C7.6898 3.01574 5.50867 3.02698 5.37993 3.08126Z" fill="#CDD5DF"/>
+                    </svg>                    
+                  <span class="file-type">PDF</span>
+                </div>
+                <div class="file-details">
+                  <p class="text-md-regular">{{ selectedFile.name }}</p>
+                  <p class="txt-light-primary-placeholder text-sm-medium">{{ (selectedFile.size / 1024 / 1024) | number:'1.0-2' }} MB</p>
+                </div>
+              </div>
+              <button type="button" class="delete-btn" (click)="removeFile()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1_3154)">
+                  <path d="M12.0387 14.9233H3.96133C3.80982 14.9233 3.65979 14.8935 3.51982 14.8355C3.37984 14.7775 3.25267 14.6925 3.14557 14.5853C3.03846 14.4781 2.95352 14.3509 2.8956 14.2109C2.83768 14.0709 2.80791 13.9209 2.808 13.7693V3.38467H13.192V13.7693C13.192 14.0752 13.0705 14.3686 12.8542 14.5849C12.6379 14.8012 12.3445 14.9233 12.0387 14.9233Z" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6.26933 11.4613V6.84668" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.73067 11.4613V6.84668" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M0.5 3.38467H15.5" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.73066 1.07666H6.26933C6.11782 1.07666 5.96779 1.10651 5.82782 1.16452C5.68784 1.22252 5.56067 1.30753 5.45357 1.4147C5.34646 1.52187 5.26152 1.64909 5.2036 1.78909C5.14568 1.9291 5.11591 2.07915 5.116 2.23066V3.38399H10.8847V2.23066C10.8847 1.92478 10.7632 1.63142 10.5469 1.41513C10.3306 1.19884 10.0372 1.07733 9.73133 1.07733L9.73066 1.07666Z" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_1_3154">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                  
+              </button>
             </div>
           </div>
         </div>

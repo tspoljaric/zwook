@@ -88,6 +88,49 @@
       .primary-default-filled-btn {
         width: 100%;
       }
+
+      .file-card {
+        @include flex-center(flex, space-between, center);
+        padding: $spacing-12 $spacing-16;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid map-get($theme-light, border-primary);
+        border-radius: $radius-12;
+        background-color: map-get($theme-light, surface-primary);
+
+        .file-info {
+          @include flex-center(flex, start, center);
+          gap: $spacing-12;
+        }
+
+        .file-icon {
+          @include flex-center(flex, center, center);
+          position: relative;
+
+          .file-type {
+            position: absolute;
+            bottom: -6px;
+            left: 4px;
+            background: red;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 4px;
+            border-radius: $radius-8;
+          }
+        }
+
+        .file-details {
+          @include flex-direction(column);
+
+        }
+
+        .delete-btn {
+          border: none;
+          background: none;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

@@ -75,39 +75,51 @@
   .podcast-status.offline {
     color: map-get($theme-light, surface-error);
   }
-
+  
   .btn-container {
-    @include flex-center(flex, start, center);
+    @include flex-center(flex, center, center);
     gap: $spacing-16;
+    padding: $spacing-16 0;
 
-    .menu-wrapper {
+    button {
+      border: none;
+      background: none;
+    }
+
+    .desktop-actions {
+      display: flex;
+      gap: $spacing-8;
+    }
+
+    .mobile-actions {
+      display: none;
       position: relative;
 
       .menu-trigger {
-        margin-top: $spacing-8;
+        padding: $spacing-8;
+        background: none;
         border: none;
-        background-color: inherit;
         cursor: pointer;
       }
 
       .dropdown {
         position: absolute;
-        top: 100%;
-        right: 0;
+        top: -3rem;
+        right: 2rem;
         z-index: 10;
-        padding: $spacing-8;
+        padding: 0;
+        min-width: 140px;
         background-color: map-get($theme-light, bg-secondary);
         border: 1px solid map-get($theme-light, border-primary);
         border-radius: $radius-12;
 
         li {
           padding: $spacing-8 $spacing-12;
+          width: 100%;
+          box-sizing: border-box;
+          border-radius: $radius-12;
           list-style: none;
           cursor: pointer;
-
-          &:hover {
-            background-color: map-get($theme-light, bg-primary);
-          }
         }
       }
     }
@@ -127,5 +139,15 @@
 
   .featured-overlay {
     gap: $spacing-8;
+  }
+
+  .btn-container {
+    .desktop-actions {
+      display: none !important;
+    }
+
+    .mobile-actions {
+      display: block !important;
+    }
   }
 }

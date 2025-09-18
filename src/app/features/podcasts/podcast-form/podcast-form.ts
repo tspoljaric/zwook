@@ -117,4 +117,10 @@ export class PodcastForm implements OnInit {
     };
     reader.readAsDataURL(this.selectedFile);
   }
+
+  removeFile() {
+    this.selectedFile = null;
+    this.podcast.imageUrl = '';
+    localStorage.removeItem('podcastImage');
+  }
 }

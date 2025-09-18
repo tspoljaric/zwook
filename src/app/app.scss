@@ -2,19 +2,12 @@
 @import 'shared/styles/mixins.scss';
 @import 'shared/styles/base.scss';
 
-app-navbar {
+app-navbar,
+app-music-control {
   flex: 1;
 }
 
-app-music-control {
-  position: fixed;
-  bottom: 0;
-  z-index: 500;
-  width: 100%;
-}
-
-
-.app-header {
+.mobile-header {
   display: flex;
   position: fixed;
   top: 0;
@@ -24,7 +17,7 @@ app-music-control {
   width: 100%;
   background-color: map-get($theme-light, bg-primary);
 
-  .app-header-menu {
+  .mobile-header-menu {
     display: none;
     border: none;
     background: none;
@@ -55,11 +48,17 @@ app-music-control {
   .main-content {
     flex: 1;
     position: relative;
-    z-index: 1;
     min-width: 0;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
+
+    .desktop-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 400;
+    }
+
   }
 }
 

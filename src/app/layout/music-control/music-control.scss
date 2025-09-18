@@ -5,6 +5,11 @@
 main {
   @include flex-center(flex, space-between, center);
   padding: $spacing-12 $spacing-36;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  z-index: 500;
   background-color: map-get($theme-light, surface-primary);
   border-top: 1px solid map-get($theme-light, border-primary);
   box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.05);
